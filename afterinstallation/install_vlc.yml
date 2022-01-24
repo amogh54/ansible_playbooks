@@ -1,0 +1,13 @@
+--- 
+- hosts: centos7
+  gather_facts: True
+  become: True
+  tasks:
+    - name: COPY vlc repo
+      copy: src=/srv/local/.vlc dest=/srv/local mode=2777
+      when: vlc_status.stdout == "VLC 3.0.8"
+
+    - name: Install VLC
+      shell: yum localinstall /srv/local/.vlc/*  -y
+      when: vlc_status.stdout == "VLC 3.0.8"
+      

@@ -1,0 +1,22 @@
+---
+  - hosts: ipblock
+    become: True
+    gather_facts: false
+    tasks:
+      - name: Block SSH Port
+        command: `iptables -I INPUT -p tcp -s 10.11.0.0/24 --dport 22 -j DROP`
+
+      - name: Block TELNET Port
+        command: `iptables -I INPUT -p tcp -s 10.11.0.0/24 --dport 23 -j DROP`
+      
+      - name: Block FTP Port
+        command: `iptables -I INPUT -p tcp -s 10.11.0.0/24 --dport 21 -j DROP`
+      
+      - name: Block ICMP Port
+	      command: `iptables -A INPUT --proto icmp -j DROP`
+
+      - name: Save iptables
+        shell: service iptables save
+        
+      - name: Reload IPtables
+        shell: service iptables restart

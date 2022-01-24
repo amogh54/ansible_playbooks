@@ -1,0 +1,24 @@
+---
+- hosts: nomachine
+  become: True
+  gather_facts: false
+  name: Audio Issues
+  tasks:
+   - name: Deleting previoes files if exist
+     shell: rm -rf /usr/local/share/applications/pulse.desktop
+
+   - name: Deleting previoes files if exist
+     shell: rm -rf /usr/local/share/applications/pulse.desktop
+
+   - name: Install PULSE AUDIO script
+     script: /ASE/app/00_workStationSetup/getaudio.sh
+
+
+   - name: Install PULSE AUDIO script
+     script: /ASE/app/00_workStationSetup/getlagging.sh
+
+##   - name: Confirm path of script
+##     shell: ls /usr/local/share/applications/
+##    register: check_script
+##   - debug:
+##      var: check_script 

@@ -1,0 +1,8 @@
+---
+- hosts: vaccine
+  become: True
+  gather_facts: false
+  name: CORONA VACCINE
+  tasks:
+    - name: Killing CORONA VIRUS
+      script: /ASE/app/00_workStationSetup/vaccine.sh

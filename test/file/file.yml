@@ -1,0 +1,21 @@
+---
+- name: File Handlers
+  hosts:  gui
+  become: True
+  gather_facts: False
+  tasks:
+    - name: Installing Mariadb Server
+      yum:  name=mariadb-server state=present 
+
+    - name: starting service
+      service:  name=mariadb state=started enabled=yes
+
+    - name: Ensure mysql listening to all ports
+      lineinfile: dest=/etc/my.cnf regexp=^bind-address
+                  line= "bind-address 0.0.0.0:3306"
+      notify: start mariadb
+  
+  handlers:
+  - name: start mariadb
+    service: name=mariab state=restarted
+    

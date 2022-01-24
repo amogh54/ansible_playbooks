@@ -1,0 +1,8 @@
+[2020-01-03 09:09:43.132] [sharedprocess] [info] main {"machineId":"b207e91230065a18cd4fb4951d46c4f635b62cce1bf74120eb6945f86dce189d","windowId":2}
+[2020-01-03 09:10:23.107] [sharedprocess] [info] Starting to clean up unused language packs.
+[2020-01-03 09:11:52.093] [sharedprocess] [info] Installing extension: vscoss.vscode-ansible
+[2020-01-03 09:13:33.821] [sharedprocess] [info] Downloaded extension: vscoss.vscode-ansible /tmp/741d890f-4fba-4f5d-9d15-406c3fc3133b
+[2020-01-03 09:13:39.263] [sharedprocess] [info] Extracted extension to /root/.vscode/extensions/.vscoss.vscode-ansible-0.5.2: vscoss.vscode-ansible
+[2020-01-03 09:13:39.263] [sharedprocess] [info] Renamed to /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2
+[2020-01-03 09:13:39.267] [sharedprocess] [info] Installation completed. vscoss.vscode-ansible
+[2020-01-03 09:13:39.321] [sharedprocess] [info] Extensions installed successfully: vscoss.vscode-ansible

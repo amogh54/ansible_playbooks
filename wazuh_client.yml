@@ -1,0 +1,17 @@
+---
+- hosts: wazuh
+  become: True
+  gather_facts: true
+  name: Install WAZUH client for ELK
+  tasks:
+    - name: Copy Wazuh Agent
+      copy: src=/srv/local/wazuh-agent-4.2.0-1.x86_64.rpm dest=/srv/local mode=2777
+
+    - name: Install Wazuh Agent
+      shell: sudo WAZUH_MANAGER='192.168.1.155' WAZUH_AGENT_GROUP='default' rpm -ivh /srv/local/wazuh-agent-4.2.0-1.x86_64.rpm
+
+    - name: Start Wazuh WAZUH_MANAGER
+      service:
+        name: wazuh-agent
+        state: started
+        enabled: yes

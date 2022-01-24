@@ -1,0 +1,15 @@
+---
+- hosts: asep
+  become: True
+  gather_facts: false
+  name: Priority Systems
+  tasks:
+    - name: Mount ASEP
+      script: /ASE/app/00_workStationSetup/mount_asep.sh 
+
+    - name: Verify mount 
+      shell: df -TH | grep /ASEP
+      register: check_asep
+
+    - debug:
+        var: check_asep

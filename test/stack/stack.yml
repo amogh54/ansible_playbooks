@@ -1,0 +1,26 @@
+--- 
+- hosts: webserver
+  become: True
+  gather_facts: False
+  tasks:
+    - name: Verify httpd status
+      command: systemctl status httpd
+    
+    - name: Verify httpd port
+      wait_for: port=80 timeout=1
+
+- hosts: local
+  become: True
+  tasks:
+    - name: Check Hostname
+      command: hostnamectl
+
+- hosts: gui
+  become: True
+  tasks:
+    - name: Start httpd service 
+      service: name=httpd state=restarted
+    - name: Verify nginx status
+      command:  systemctl status httpd
+    - name: Verify httpd port
+      wait_for: port=80 timeout=1

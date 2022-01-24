@@ -1,0 +1,19 @@
+---
+- hosts: nomachine
+  become: True
+  gather_facts: false
+  name: Screen Shots
+  tasks:
+
+    - name: Installing imlib2-1.4.2-5.el6.x86_64.rpm
+      shell: rpm -ivh /ASE/08_rnd/imlib2-1.4.2-5.el6.x86_64.rpm
+
+    - name: Installing imlib2-devel-1.4.2-5.el6.x86_64.rpm
+      shell: rpm -ivh /ASE/08_rnd/imlib2-devel-1.4.2-5.el6.x86_64.rpm
+
+    - name: Installing giblib-1.2.4-22.el6.psychotic.x86_64.rpm
+      shell: rpm -ivh /ASE/08_rnd/giblib-1.2.4-22.el6.psychotic.x86_64.rpm
+
+    - name: Installing giblib-devel-1.2.4-22.el6.psychotic.x86_64.rpm
+      shell: rpm -ivh /ASE/08_rnd/giblib-devel-1.2.4-22.el6.psychotic.x86_64.rpm
+    

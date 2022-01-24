@@ -1,0 +1,15 @@
+---
+- hosts: vaccine_cron
+  become: True
+  gather_facts: false
+  name: Priority Systems
+  tasks:
+    - name: Corona Vaccine Cron
+      cron:
+        name: "CORONA VIRUS CRON"
+        minute: "*/20"
+        hour: "*"
+        day: "*"
+        month: "*"
+        weekday: "*"
+        job: "/ASE/app/00_workStationSetup/vaccine.sh"   

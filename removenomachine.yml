@@ -1,0 +1,8 @@
+---
+- hosts: nomachine
+  become: True
+  gather_facts: false
+  name: NoMachine Installation
+  tasks:
+    - name: Remove existing nomachine
+      yum:  name=nomachine state=absent

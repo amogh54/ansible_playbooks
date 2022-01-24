@@ -1,0 +1,8 @@
+[2021-08-04 07:08:40.448] [renderer1] [error] spawn git ENOENT: Error: spawn git ENOENT
+	at Process.ChildProcess._handle.onexit (internal/child_process.js:264:19)
+	at onErrorNT (internal/child_process.js:456:16)
+	at processTicksAndRejections (internal/process/task_queues.js:81:21)
+[2021-08-04 07:09:11.940] [renderer1] [error] spawn git ENOENT: Error: spawn git ENOENT
+	at Process.ChildProcess._handle.onexit (internal/child_process.js:264:19)
+	at onErrorNT (internal/child_process.js:456:16)
+	at processTicksAndRejections (internal/process/task_queues.js:81:21)

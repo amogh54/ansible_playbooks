@@ -1,0 +1,14 @@
+---
+- name: Removing Multiples Packages
+  become: True
+  hosts: gui
+  tasks:
+  - name: Removing Multiple Packages
+    yum:
+      name: "{{ package }}"
+      state:  absent
+    vars:
+      package:
+      - httpd
+      - nginx
+      - mariadb-server

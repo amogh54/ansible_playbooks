@@ -1,0 +1,41 @@
+---
+    - hosts: update
+      become: True
+      gather_facts: false
+      tasks:
+        - name: Checking nomachine version
+          yum:  
+            list: nomachine
+          register: pkg
+        - debug:
+            var: pkg
+
+        - name: Removing older serion
+          yum:  name=nomachine state=absent
+          when: pkg.results[0].version ==  "6.12.3" or pkg.results[0].version ==  "6.11.2" or pkg.results[0].version == "6.10.12" or pkg.results[0].yumstate != "installed"
+
+        - name: Copy NoMachine RPM
+          copy: src=/srv/local/nomachine_7.0.208_7_x86_64.rpm dest=/srv/local mode=777
+          when: pkg.results[0].version ==  "6.12.3" or pkg.results[0].version ==  "6.11.2" or pkg.results[0].version == "6.10.12" or pkg.results[0].yumstate != "installed"
+
+        - name: Install Latest NoMachine
+          shell: rpm -ivh /srv/local/nomachine_7.0.208_7_x86_64.rpm
+          when: pkg.results[0].version ==  "6.12.3" or pkg.results[0].version ==  "6.11.2" or pkg.results[0].version == "6.10.12" or pkg.results[0].yumstate != "installed"
+
+        - name: Disable file sharing
+          lineinfile: dest=/usr/NX/etc/node.cfg regexp='^#EnableFileTransfer both'
+                      line="EnableFileTransfer none"
+  #   when: pkg.results[0].version ==  "6.12.3" or pkg.results[0].version ==  "6.11.2" or pkg.results[0].version == "6.10.12" or pkg.results[0].yumstate != "installed"
+                  
+          notify: start nx
+    
+        - name: File sharing check
+          shell: cat /usr/NX/etc/node.cfg | grep 'EnableFileTransfer none'
+          register: check_script
+        
+        - debug:
+           var: check_script
+
+      handlers: 
+        - name: start nx
+          shell: /etc/NX/nxserver --restart 

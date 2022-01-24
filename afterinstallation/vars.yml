@@ -1,0 +1,8 @@
+--- 
+
+  - name: IMPORT STATUS PLAY 
+    import_playbook: /etc/ansible/playbooks/afterinstallation/vlc_check.yml
+
+  - name: IMPORT INSTALL VLC PLAY
+    import_playbook: /etc/ansible/playbooks/afterinstallation/install_vlc.yml
+          

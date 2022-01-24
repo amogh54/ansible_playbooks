@@ -1,0 +1,300 @@
+
+PLAY [nomachine] **************************************************************************************************************************************************************************************************
+
+TASK [Users Logged in] ********************************************************************************************************************************************************************************************
+changed: [10.11.2.19]
+changed: [10.11.5.24]
+changed: [10.11.19.6]
+changed: [10.11.19.11]
+changed: [10.11.19.40]
+changed: [10.11.19.12]
+changed: [10.11.19.24]
+
+TASK [debug] ******************************************************************************************************************************************************************************************************
+ok: [10.11.19.24] => {
+    "check_login": {
+        "ansible_facts": {
+            "discovered_interpreter_python": "/usr/bin/python"
+        }, 
+        "changed": true, 
+        "cmd": "who | cut -d' ' -f1 | sort | uniq", 
+        "delta": "0:00:00.005494", 
+        "end": "2020-12-25 11:36:30.245727", 
+        "failed": false, 
+        "rc": 0, 
+        "start": "2020-12-25 11:36:30.240233", 
+        "stderr": "", 
+        "stderr_lines": [], 
+        "stdout": "pratik.chautel\nroot", 
+        "stdout_lines": [
+            "pratik.chautel", 
+            "root"
+        ]
+    }
+}
+ok: [10.11.5.24] => {
+    "check_login": {
+        "ansible_facts": {
+            "discovered_interpreter_python": "/usr/bin/python"
+        }, 
+        "changed": true, 
+        "cmd": "who | cut -d' ' -f1 | sort | uniq", 
+        "delta": "0:00:00.005348", 
+        "end": "2020-12-25 11:36:30.116294", 
+        "failed": false, 
+        "rc": 0, 
+        "start": "2020-12-25 11:36:30.110946", 
+        "stderr": "", 
+        "stderr_lines": [], 
+        "stdout": "deepak.barnwal\nroot", 
+        "stdout_lines": [
+            "deepak.barnwal", 
+            "root"
+        ]
+    }
+}
+ok: [10.11.19.11] => {
+    "check_login": {
+        "ansible_facts": {
+            "discovered_interpreter_python": "/usr/bin/python"
+        }, 
+        "changed": true, 
+        "cmd": "who | cut -d' ' -f1 | sort | uniq", 
+        "delta": "0:00:00.005181", 
+        "end": "2020-12-25 11:36:30.147419", 
+        "failed": false, 
+        "rc": 0, 
+        "start": "2020-12-25 11:36:30.142238", 
+        "stderr": "", 
+        "stderr_lines": [], 
+        "stdout": "kunal.adav\nroot", 
+        "stdout_lines": [
+            "kunal.adav", 
+            "root"
+        ]
+    }
+}
+ok: [10.11.19.6] => {
+    "check_login": {
+        "ansible_facts": {
+            "discovered_interpreter_python": "/usr/bin/python"
+        }, 
+        "changed": true, 
+        "cmd": "who | cut -d' ' -f1 | sort | uniq", 
+        "delta": "0:00:00.005344", 
+        "end": "2020-12-25 11:36:30.141171", 
+        "failed": false, 
+        "rc": 0, 
+        "start": "2020-12-25 11:36:30.135827", 
+        "stderr": "", 
+        "stderr_lines": [], 
+        "stdout": "root\nsohini.kundu", 
+        "stdout_lines": [
+            "root", 
+            "sohini.kundu"
+        ]
+    }
+}
+ok: [10.11.19.12] => {
+    "check_login": {
+        "ansible_facts": {
+            "discovered_interpreter_python": "/usr/bin/python"
+        }, 
+        "changed": true, 
+        "cmd": "who | cut -d' ' -f1 | sort | uniq", 
+        "delta": "0:00:00.005045", 
+        "end": "2020-12-25 11:36:30.204379", 
+        "failed": false, 
+        "rc": 0, 
+        "start": "2020-12-25 11:36:30.199334", 
+        "stderr": "", 
+        "stderr_lines": [], 
+        "stdout": "hemang.somaiya\nroot", 
+        "stdout_lines": [
+            "hemang.somaiya", 
+            "root"
+        ]
+    }
+}
+ok: [10.11.2.19] => {
+    "check_login": {
+        "ansible_facts": {
+            "discovered_interpreter_python": "/usr/bin/python"
+        }, 
+        "changed": true, 
+        "cmd": "who | cut -d' ' -f1 | sort | uniq", 
+        "delta": "0:00:00.005489", 
+        "end": "2020-12-25 11:36:30.110118", 
+        "failed": false, 
+        "rc": 0, 
+        "start": "2020-12-25 11:36:30.104629", 
+        "stderr": "", 
+        "stderr_lines": [], 
+        "stdout": "narugopal.ghosh\nroot", 
+        "stdout_lines": [
+            "narugopal.ghosh", 
+            "root"
+        ]
+    }
+}
+ok: [10.11.19.40] => {
+    "check_login": {
+        "ansible_facts": {
+            "discovered_interpreter_python": "/usr/bin/python"
+        }, 
+        "changed": true, 
+        "cmd": "who | cut -d' ' -f1 | sort | uniq", 
+        "delta": "0:00:00.005365", 
+        "end": "2020-12-25 11:36:30.194844", 
+        "failed": false, 
+        "rc": 0, 
+        "start": "2020-12-25 11:36:30.189479", 
+        "stderr": "", 
+        "stderr_lines": [], 
+        "stdout": "harichand.maurya\nroot", 
+        "stdout_lines": [
+            "harichand.maurya", 
+            "root"
+        ]
+    }
+}
+
+TASK [Port Check] *************************************************************************************************************************************************************************************************
+changed: [10.11.2.19]
+changed: [10.11.5.24]
+changed: [10.11.19.6]
+changed: [10.11.19.11]
+changed: [10.11.19.40]
+changed: [10.11.19.12]
+changed: [10.11.19.24]
+
+TASK [debug] ******************************************************************************************************************************************************************************************************
+ok: [10.11.19.24] => {
+    "check_port": {
+        "changed": true, 
+        "cmd": "cat /usr/NX/etc/server.cfg | grep 'NXPort'", 
+        "delta": "0:00:00.006165", 
+        "end": "2020-12-25 11:36:30.982984", 
+        "failed": false, 
+        "rc": 0, 
+        "start": "2020-12-25 11:36:30.976819", 
+        "stderr": "", 
+        "stderr_lines": [], 
+        "stdout": "NXPort 35808", 
+        "stdout_lines": [
+            "NXPort 35808"
+        ]
+    }
+}
+ok: [10.11.5.24] => {
+    "check_port": {
+        "changed": true, 
+        "cmd": "cat /usr/NX/etc/server.cfg | grep 'NXPort'", 
+        "delta": "0:00:00.005025", 
+        "end": "2020-12-25 11:36:30.834923", 
+        "failed": false, 
+        "rc": 0, 
+        "start": "2020-12-25 11:36:30.829898", 
+        "stderr": "", 
+        "stderr_lines": [], 
+        "stdout": "NXPort 35797", 
+        "stdout_lines": [
+            "NXPort 35797"
+        ]
+    }
+}
+ok: [10.11.19.11] => {
+    "check_port": {
+        "changed": true, 
+        "cmd": "cat /usr/NX/etc/server.cfg | grep 'NXPort'", 
+        "delta": "0:00:00.004571", 
+        "end": "2020-12-25 11:36:30.852919", 
+        "failed": false, 
+        "rc": 0, 
+        "start": "2020-12-25 11:36:30.848348", 
+        "stderr": "", 
+        "stderr_lines": [], 
+        "stdout": "NXPort  35798", 
+        "stdout_lines": [
+            "NXPort  35798"
+        ]
+    }
+}
+ok: [10.11.19.12] => {
+    "check_port": {
+        "changed": true, 
+        "cmd": "cat /usr/NX/etc/server.cfg | grep 'NXPort'", 
+        "delta": "0:00:00.004789", 
+        "end": "2020-12-25 11:36:30.956936", 
+        "failed": false, 
+        "rc": 0, 
+        "start": "2020-12-25 11:36:30.952147", 
+        "stderr": "", 
+        "stderr_lines": [], 
+        "stdout": "NXPort 35667", 
+        "stdout_lines": [
+            "NXPort 35667"
+        ]
+    }
+}
+ok: [10.11.19.6] => {
+    "check_port": {
+        "changed": true, 
+        "cmd": "cat /usr/NX/etc/server.cfg | grep 'NXPort'", 
+        "delta": "0:00:00.004949", 
+        "end": "2020-12-25 11:36:30.839752", 
+        "failed": false, 
+        "rc": 0, 
+        "start": "2020-12-25 11:36:30.834803", 
+        "stderr": "", 
+        "stderr_lines": [], 
+        "stdout": "NXPort 35799", 
+        "stdout_lines": [
+            "NXPort 35799"
+        ]
+    }
+}
+ok: [10.11.19.40] => {
+    "check_port": {
+        "changed": true, 
+        "cmd": "cat /usr/NX/etc/server.cfg | grep 'NXPort'", 
+        "delta": "0:00:00.005174", 
+        "end": "2020-12-25 11:36:30.910892", 
+        "failed": false, 
+        "rc": 0, 
+        "start": "2020-12-25 11:36:30.905718", 
+        "stderr": "", 
+        "stderr_lines": [], 
+        "stdout": "NXPort 35801", 
+        "stdout_lines": [
+            "NXPort 35801"
+        ]
+    }
+}
+ok: [10.11.2.19] => {
+    "check_port": {
+        "changed": true, 
+        "cmd": "cat /usr/NX/etc/server.cfg | grep 'NXPort'", 
+        "delta": "0:00:00.005139", 
+        "end": "2020-12-25 11:36:30.827644", 
+        "failed": false, 
+        "rc": 0, 
+        "start": "2020-12-25 11:36:30.822505", 
+        "stderr": "", 
+        "stderr_lines": [], 
+        "stdout": "NXPort 35802", 
+        "stdout_lines": [
+            "NXPort 35802"
+        ]
+    }
+}
+
+PLAY RECAP ********************************************************************************************************************************************************************************************************
+10.11.19.11                : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+10.11.19.12                : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+10.11.19.24                : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+10.11.19.40                : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+10.11.19.6                 : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+10.11.2.19                 : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+10.11.5.24                 : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

@@ -1,0 +1,15 @@
+---
+ - name: This is play to understand debug module
+   hosts: 10.11.2.3:10.11.2.4:10.11.2.5
+   tasks:
+    - name: Printing message
+      debug:
+       msg: 
+        - "WELCOME TO MADASSEMBLAGE"
+        - "VLAN 2 MESSAGE"
+        - "The Hostname is {{inventory_hostname}}"
+    - name: Printing message using Variable
+      debug:
+       var: inventory_hostname
+       verbosity: 2
+#   - debug: msg="WELCOME TO MADASSEMBLAGE"

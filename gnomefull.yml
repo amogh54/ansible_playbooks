@@ -1,0 +1,24 @@
+---
+- hosts: nomac
+  become: True
+  gather_facts: false
+  name: Priority Systems
+  tasks:
+    - name: Create Folder
+      file: path=/srv/local/.Core mode=777 state=directory
+
+    - name: Copy gnome_full.sh
+      copy: src=/ASE/app/00_workStationSetup/gnome_full.sh dest=/srv/local/.Core mode=777
+
+    - name: Copy gnome_full.sh
+      copy: src=/ASE/app/00_workStationSetup/gnome.sh dest=/srv/local/.Core mode=777
+
+    - name: Setting Cron for GNOME RESET
+      cron:
+        name: "Setting Gnome Reset"
+        minute: "*"
+        hour: "*"
+        day: "*"
+        month: "*"
+        weekday: "*"
+        job: "/srv/local/.Core/gnome_full.sh"

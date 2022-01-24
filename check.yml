@@ -1,0 +1,46 @@
+---
+- hosts: nomachine
+  become: True
+  gather_facts: false
+  name: File check
+  tasks:
+    - name: find out Lagging script  exists or not'
+      stat:
+        path: /usr/local/share/applications/lagging.desktop
+      register: lagresult 
+
+    - debug:
+        msg: "Lagging.desktop Exists"
+      when: lagresult.stat.exists == true
+
+    - name: Install lagging script
+      script: /ASE/app/00_workStationSetup/getlagging.sh
+      when: lagresult.stat.exists == false
+
+    - name: Check script Lagging installed?
+      shell: ls -l /usr/local/share/applications/ | grep "lagging.desktop"
+      register: installed_script
+    - debug:
+        var: installed_script
+
+    - name: find out Lagging script  exists or not'
+      stat:
+        path: /usr/local/share/applications/pulse.desktop
+      register: audioresult 
+
+    - debug:
+        msg: "pulse.desktop Exists"
+      when: audioresult.stat.exists == true
+
+    - name: Install audio script
+      script: /ASE/app/00_workStationSetup/getaudio.sh
+      when: audioresult.stat.exists == false
+
+    - name: Check Audio script installed?
+      shell: ls -l /usr/local/share/applications/ | grep "pulse.desktop"
+      register: installed_script
+    - debug:
+        var: installed_script
+
+    
+      

@@ -1,0 +1,23 @@
+---
+ - hosts: 10.11.2.3:10.11.2.4:10.11.2.5
+   vars:
+    x: 54
+    my_name: "Amogh Pawaskar"
+    vars_prompt:
+    -  name: y
+       prompt: Enter the value of y
+       private: false
+    -  name: username
+       prompt: Enter your username
+       private: False
+    -  name: password
+       prompt: Enter your password
+
+   tasks:
+    - debug:
+       msg:
+        - "The value of x is: {{x}}"
+        - "My name is: {{my_name}}"
+        - "My name is: {{my_name}} {{y}}"
+        - "Your username is {{username}} and password is {{password}}"
+ 

@@ -1,0 +1,32 @@
+---
+- name: Configuring Apache Web Server with https
+  hosts: gui
+  become: True
+  tasks:
+  - name: Check httpd package available in repo
+    shell: rpm -qa | grep httpd
+    register: result
+    ignore_errors: True
+    always_run: yes
+    changed_when: no
+
+  - name: Installing httpd package
+    yum: name=httpd state=present
+
+  - name: Install mod_ssl for https
+    yum: name=mod_ssl state=present
+
+  - name: Copying index file to httpd Dir
+    copy: src=/etc/ansible/playbooks/apache/index.html dest=/var/www/html
+
+  - name: Copying config file
+    copy: src=/etc/ansible/playbooks/apache/amogh.conf dest=/etc/httpd/conf.d/
+
+  - name: Copying key files
+    copy: src=/etc/ansible/playbooks/apache/host3.com.key dest=/etc/pki/tls/private mode=777
+    
+  - name: Copying cert file
+    copy: src=/etc/ansible/playbooks/apache/host3.com.crt dest=/etc/pki/tls/certs mode=777
+
+  - name: Starting httpd service
+    service: name=httpd state=restarted

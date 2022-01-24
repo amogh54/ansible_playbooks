@@ -1,0 +1,6 @@
+---
+- hosts: prio
+  become: true
+  tasks:
+    - name: ping
+      shell: hostname

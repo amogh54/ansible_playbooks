@@ -1,0 +1,16 @@
+---
+- hosts: mate
+  become: True
+  gather_facts: false
+  tasks:
+    - name: Copy mate
+      copy: src=/srv/local/Mate dest=/srv/local mode=2777
+
+    - name: Install rpm
+      shell: rpm -ivh --force /srv/local/Mate/*
+
+    - name: exec mate
+      shell: echo "exec /usr/bin/mate-session" >> ~/.xinitrc
+
+
+      

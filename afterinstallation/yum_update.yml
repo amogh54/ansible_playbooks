@@ -1,0 +1,49 @@
+---
+- hosts: centos7
+  become: True
+  gather_facts: true
+  name: POST INSTALLATION STEPS YUM UPDATE 7.9
+  tasks:
+    - name: Create Folder for original Repos
+      file:
+        path: /srv/local/repos
+        state: directory
+        mode: 2777
+
+    - name: Moving Original Repos
+      command: rm -rf /etc/yum.repos.d/
+
+    - name: Check Original repos are moved
+      shell: ls  /srv/local/repos
+      register: og_status
+    - debug:
+        var: og_status
+
+    - name: Copy RPM Needed to UPDATE
+      copy:
+        src: /srv/local/CentOS7.9
+        dest: /srv/local
+    
+    - name: Copy Required Repo
+      copy:
+        src: /srv/local/updates.repo
+        dest: /etc/yum.repos.d/
+
+    - name: Clean old yum data
+      command: yum clean all
+
+    - name: Clean Yum Cache
+      command: rm -rf /var/cache/yum/*
+    
+    - name: Update CentOS 7
+      command: yum update -y
+
+    - name: YuM update complete
+      command: echo "YUM UPDATE COMPLETE !!  REBOOT SYSTEM AND REINSTALL DRIVERS!!!!"
+      register: up_status
+    - debug:
+        var: up_status 
+    
+
+
+    

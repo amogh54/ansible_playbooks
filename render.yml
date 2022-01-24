@@ -1,0 +1,25 @@
+---
+- hosts: render
+  gather_facts: true
+  become: True
+  name: Install Muster
+  tasks:
+    - name: Unlink render
+      shell: unlink /home/render
+      ignore_errors: yes
+
+    - name: Create render directory
+      shell: ls -l /home/render
+      register: render_status
+      become: yes
+      become_user: render
+
+    - debug:
+        var: render_status
+
+    - name: Install Muster setup
+      script: /ASE/app/00_workStationSetup/muster_installation.sh
+
+    - name: Unlink Muster9
+      script: /ASE/app/00_workStationSetup/unlink.sh
+    

@@ -1,0 +1,16 @@
+---
+  - hosts: vlan2
+    gather_facts: false
+    tasks:
+      - command: "echo $HOSTNAME"
+        register: serial_no
+      - debug:
+          var: serial_no
+
+
+
+
+
+
+
+

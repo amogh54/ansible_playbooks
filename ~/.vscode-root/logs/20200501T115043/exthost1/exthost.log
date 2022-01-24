@@ -1,0 +1,282 @@
+[2020-05-01 11:50:49.193] [exthost] [info] extension host started
+[2020-05-01 11:50:49.254] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"extensionId":{"value":"vscode.debug-auto-launch","_lower":"vscode.debug-auto-launch"},"activationEvent":"*"}
+[2020-05-01 11:50:49.255] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/debug-auto-launch/dist/extension
+[2020-05-01 11:50:49.283] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"extensionId":{"value":"vscode.emmet","_lower":"vscode.emmet"},"activationEvent":"*"}
+[2020-05-01 11:50:49.283] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/emmet/dist/extension
+[2020-05-01 11:50:49.322] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"extensionId":{"value":"vscode.git","_lower":"vscode.git"},"activationEvent":"*"}
+[2020-05-01 11:50:49.322] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/git/dist/main
+[2020-05-01 11:50:49.378] [exthost] [info] ExtensionService#_doActivateExtension vscode.github-authentication {"startup":true,"extensionId":{"value":"vscode.github-authentication","_lower":"vscode.github-authentication"},"activationEvent":"*"}
+[2020-05-01 11:50:49.378] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/github-authentication/dist/extension.js
+[2020-05-01 11:50:49.395] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"extensionId":{"value":"vscode.merge-conflict","_lower":"vscode.merge-conflict"},"activationEvent":"*"}
+[2020-05-01 11:50:49.395] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/merge-conflict/dist/extension
+[2020-05-01 11:50:49.408] [exthost] [info] ExtensionService#_doActivateExtension vscode.search-result {"startup":true,"extensionId":{"value":"vscode.search-result","_lower":"vscode.search-result"},"activationEvent":"*"}
+[2020-05-01 11:50:49.408] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/search-result/dist/extension.js
+[2020-05-01 11:50:49.412] [exthost] [info] ExtensionService#_doActivateExtension vscode.vscode-account {"startup":true,"extensionId":{"value":"vscode.vscode-account","_lower":"vscode.vscode-account"},"activationEvent":"*"}
+[2020-05-01 11:50:49.413] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/vscode-account/dist/extension.js
+[2020-05-01 11:50:49.420] [exthost] [info] eager extensions activated
+[2020-05-01 11:50:49.613] [exthost] [info] ExtensionService#_doActivateExtension vscode.configuration-editing {"startup":false,"extensionId":{"value":"vscode.configuration-editing","_lower":"vscode.configuration-editing"},"activationEvent":"onLanguage:json"}
+[2020-05-01 11:50:49.613] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/configuration-editing/dist/extension
+[2020-05-01 11:50:49.676] [exthost] [info] ExtensionService#_doActivateExtension vscode.extension-editing {"startup":false,"extensionId":{"value":"vscode.extension-editing","_lower":"vscode.extension-editing"},"activationEvent":"onLanguage:json"}
+[2020-05-01 11:50:49.677] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/extension-editing/dist/extension
+[2020-05-01 11:50:49.751] [exthost] [info] ExtensionService#_doActivateExtension vscode.json-language-features {"startup":false,"extensionId":{"value":"vscode.json-language-features","_lower":"vscode.json-language-features"},"activationEvent":"onLanguage:json"}
+[2020-05-01 11:50:49.751] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/json-language-features/client/dist/jsonMain
+[2020-05-01 11:50:49.821] [exthost] [info] ExtensionService#_doActivateExtension vscode.npm {"startup":false,"extensionId":{"value":"vscode.npm","_lower":"vscode.npm"},"activationEvent":"onLanguage:json"}
+[2020-05-01 11:50:49.821] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/npm/dist/main
+[2020-05-01 11:50:49.853] [exthost] [info] ExtensionService#_doActivateExtension vscode.css-language-features {"startup":false,"extensionId":{"value":"vscode.css-language-features","_lower":"vscode.css-language-features"},"activationEvent":"onLanguage:css"}
+[2020-05-01 11:50:49.853] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/css-language-features/client/dist/cssMain
+[2020-05-01 11:50:49.891] [exthost] [info] ExtensionService#_doActivateExtension vscode.typescript-language-features {"startup":false,"extensionId":{"value":"vscode.typescript-language-features","_lower":"vscode.typescript-language-features"},"activationEvent":"onLanguage:typescript"}
+[2020-05-01 11:50:49.891] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/typescript-language-features/dist/extension
+[2020-05-01 11:50:56.505] [exthost] [info] ExtensionService#_doActivateExtension vscoss.vscode-ansible {"startup":false,"extensionId":{"value":"vscoss.vscode-ansible","_lower":"vscoss.vscode-ansible"},"activationEvent":"onLanguage:yaml"}
+[2020-05-01 11:50:56.505] [exthost] [info] ExtensionService#loadCommonJSModule file:///root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/out/extension
+[2020-05-05 09:51:32.467] [exthost] [error] [vscoss.vscode-ansible] provider FAILED
+[2020-05-05 09:51:32.470] [exthost] [error] Error: name must not be falsy
+	at Function.validate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:420)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:369)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:398:174)
+	at asSymbolInformation (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:251:22)
+	at /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:42
+	at Array.map (<anonymous>)
+	at asSymbolInformations (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:23)
+[2020-05-05 09:51:42.246] [exthost] [error] [vscoss.vscode-ansible] provider FAILED
+[2020-05-05 09:51:42.246] [exthost] [error] Error: name must not be falsy
+	at Function.validate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:420)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:369)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:398:174)
+	at asSymbolInformation (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:251:22)
+	at /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:42
+	at Array.map (<anonymous>)
+	at asSymbolInformations (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:23)
+[2020-05-05 09:51:42.830] [exthost] [error] [vscoss.vscode-ansible] provider FAILED
+[2020-05-05 09:51:42.830] [exthost] [error] Error: name must not be falsy
+	at Function.validate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:420)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:369)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:398:174)
+	at asSymbolInformation (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:251:22)
+	at /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:42
+	at Array.map (<anonymous>)
+	at asSymbolInformations (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:23)
+[2020-05-05 09:51:45.553] [exthost] [error] [vscoss.vscode-ansible] provider FAILED
+[2020-05-05 09:51:45.553] [exthost] [error] Error: name must not be falsy
+	at Function.validate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:420)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:369)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:398:174)
+	at asSymbolInformation (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:251:22)
+	at /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:42
+	at Array.map (<anonymous>)
+	at asSymbolInformations (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:23)
+[2020-05-05 09:51:47.725] [exthost] [error] [vscoss.vscode-ansible] provider FAILED
+[2020-05-05 09:51:47.725] [exthost] [error] Error: name must not be falsy
+	at Function.validate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:420)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:369)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:398:174)
+	at asSymbolInformation (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:251:22)
+	at /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:42
+	at Array.map (<anonymous>)
+	at asSymbolInformations (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:23)
+[2020-05-05 09:52:00.077] [exthost] [error] [vscoss.vscode-ansible] provider FAILED
+[2020-05-05 09:52:00.077] [exthost] [error] Error: name must not be falsy
+	at Function.validate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:420)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:369)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:398:174)
+	at asSymbolInformation (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:251:22)
+	at /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:42
+	at Array.map (<anonymous>)
+	at asSymbolInformations (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:23)
+[2020-05-05 09:52:02.159] [exthost] [error] [vscoss.vscode-ansible] provider FAILED
+[2020-05-05 09:52:02.159] [exthost] [error] Error: name must not be falsy
+	at Function.validate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:420)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:369)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:398:174)
+	at asSymbolInformation (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:251:22)
+	at /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:42
+	at Array.map (<anonymous>)
+	at asSymbolInformations (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:23)
+[2020-05-05 09:52:07.360] [exthost] [error] [vscoss.vscode-ansible] provider FAILED
+[2020-05-05 09:52:07.360] [exthost] [error] Error: name must not be falsy
+	at Function.validate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:420)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:369)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:398:174)
+	at asSymbolInformation (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:251:22)
+	at /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:42
+	at Array.map (<anonymous>)
+	at asSymbolInformations (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:23)
+[2020-05-05 09:52:08.049] [exthost] [error] [vscoss.vscode-ansible] provider FAILED
+[2020-05-05 09:52:08.049] [exthost] [error] Error: name must not be falsy
+	at Function.validate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:420)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:369)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:398:174)
+	at asSymbolInformation (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:251:22)
+	at /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:42
+	at Array.map (<anonymous>)
+	at asSymbolInformations (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:23)
+[2020-05-05 09:52:24.828] [exthost] [error] [vscoss.vscode-ansible] provider FAILED
+[2020-05-05 09:52:24.828] [exthost] [error] Error: name must not be falsy
+	at Function.validate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:420)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:369)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:398:174)
+	at asSymbolInformation (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:251:22)
+	at /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:42
+	at Array.map (<anonymous>)
+	at asSymbolInformations (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:23)
+[2020-05-05 09:52:38.794] [exthost] [error] [vscoss.vscode-ansible] provider FAILED
+[2020-05-05 09:52:38.795] [exthost] [error] Error: name must not be falsy
+	at Function.validate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:420)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:369)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:398:174)
+	at asSymbolInformation (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:251:22)
+	at /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:42
+	at Array.map (<anonymous>)
+	at asSymbolInformations (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:23)
+[2020-05-05 09:52:39.659] [exthost] [error] [vscoss.vscode-ansible] provider FAILED
+[2020-05-05 09:52:39.659] [exthost] [error] Error: name must not be falsy
+	at Function.validate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:420)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:369)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:398:174)
+	at asSymbolInformation (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:251:22)
+	at /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:42
+	at Array.map (<anonymous>)
+	at asSymbolInformations (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:23)
+[2020-05-05 09:52:40.126] [exthost] [error] [vscoss.vscode-ansible] provider FAILED
+[2020-05-05 09:52:40.126] [exthost] [error] Error: name must not be falsy
+	at Function.validate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:420)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:369)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:398:174)
+	at asSymbolInformation (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:251:22)
+	at /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:42
+	at Array.map (<anonymous>)
+	at asSymbolInformations (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:23)
+[2020-05-05 09:52:42.442] [exthost] [error] [vscoss.vscode-ansible] provider FAILED
+[2020-05-05 09:52:42.442] [exthost] [error] Error: name must not be falsy
+	at Function.validate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:420)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:369)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:398:174)
+	at asSymbolInformation (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:251:22)
+	at /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:42
+	at Array.map (<anonymous>)
+	at asSymbolInformations (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:23)
+[2020-05-05 09:52:43.274] [exthost] [error] [vscoss.vscode-ansible] provider FAILED
+[2020-05-05 09:52:43.275] [exthost] [error] Error: name must not be falsy
+	at Function.validate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:420)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:369)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:398:174)
+	at asSymbolInformation (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:251:22)
+	at /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:42
+	at Array.map (<anonymous>)
+	at asSymbolInformations (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:23)
+[2020-05-05 09:52:43.681] [exthost] [error] [vscoss.vscode-ansible] provider FAILED
+[2020-05-05 09:52:43.681] [exthost] [error] Error: name must not be falsy
+	at Function.validate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:420)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:369)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:398:174)
+	at asSymbolInformation (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:251:22)
+	at /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:42
+	at Array.map (<anonymous>)
+	at asSymbolInformations (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:23)
+[2020-05-05 09:52:44.993] [exthost] [error] [vscoss.vscode-ansible] provider FAILED
+[2020-05-05 09:52:44.993] [exthost] [error] Error: name must not be falsy
+	at Function.validate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:420)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:369)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:398:174)
+	at asSymbolInformation (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:251:22)
+	at /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:42
+	at Array.map (<anonymous>)
+	at asSymbolInformations (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:23)
+[2020-05-05 09:53:26.709] [exthost] [error] [vscoss.vscode-ansible] provider FAILED
+[2020-05-05 09:53:26.709] [exthost] [error] Error: name must not be falsy
+	at Function.validate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:420)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:369)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:398:174)
+	at asSymbolInformation (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:251:22)
+	at /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:42
+	at Array.map (<anonymous>)
+	at asSymbolInformations (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:23)
+[2020-05-05 09:53:27.120] [exthost] [error] [vscoss.vscode-ansible] provider FAILED
+[2020-05-05 09:53:27.120] [exthost] [error] Error: name must not be falsy
+	at Function.validate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:420)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:369)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:398:174)
+	at asSymbolInformation (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:251:22)
+	at /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:42
+	at Array.map (<anonymous>)
+	at asSymbolInformations (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:23)
+[2020-05-05 09:53:27.712] [exthost] [error] [vscoss.vscode-ansible] provider FAILED
+[2020-05-05 09:53:27.713] [exthost] [error] Error: name must not be falsy
+	at Function.validate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:420)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:369)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:398:174)
+	at asSymbolInformation (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:251:22)
+	at /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:42
+	at Array.map (<anonymous>)
+	at asSymbolInformations (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:23)
+[2020-05-05 09:53:28.425] [exthost] [error] [vscoss.vscode-ansible] provider FAILED
+[2020-05-05 09:53:28.425] [exthost] [error] Error: name must not be falsy
+	at Function.validate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:420)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:369)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:398:174)
+	at asSymbolInformation (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:251:22)
+	at /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:42
+	at Array.map (<anonymous>)
+	at asSymbolInformations (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:23)
+[2020-05-05 09:53:28.819] [exthost] [error] [vscoss.vscode-ansible] provider FAILED
+[2020-05-05 09:53:28.819] [exthost] [error] Error: name must not be falsy
+	at Function.validate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:420)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:369)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:398:174)
+	at asSymbolInformation (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:251:22)
+	at /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:42
+	at Array.map (<anonymous>)
+	at asSymbolInformations (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:23)
+[2020-05-05 09:53:30.801] [exthost] [error] [vscoss.vscode-ansible] provider FAILED
+[2020-05-05 09:53:30.801] [exthost] [error] Error: name must not be falsy
+	at Function.validate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:420)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:369)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:398:174)
+	at asSymbolInformation (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:251:22)
+	at /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:42
+	at Array.map (<anonymous>)
+	at asSymbolInformations (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:23)
+[2020-05-05 09:53:32.080] [exthost] [error] [vscoss.vscode-ansible] provider FAILED
+[2020-05-05 09:53:32.081] [exthost] [error] Error: name must not be falsy
+	at Function.validate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:420)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:369)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:398:174)
+	at asSymbolInformation (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:251:22)
+	at /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:42
+	at Array.map (<anonymous>)
+	at asSymbolInformations (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:23)
+[2020-05-05 09:53:33.957] [exthost] [error] [vscoss.vscode-ansible] provider FAILED
+[2020-05-05 09:53:33.957] [exthost] [error] Error: name must not be falsy
+	at Function.validate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:420)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:369)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:398:174)
+	at asSymbolInformation (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:251:22)
+	at /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:42
+	at Array.map (<anonymous>)
+	at asSymbolInformations (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:23)
+[2020-05-05 09:53:34.940] [exthost] [error] [vscoss.vscode-ansible] provider FAILED
+[2020-05-05 09:53:34.941] [exthost] [error] Error: name must not be falsy
+	at Function.validate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:420)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:369)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:398:174)
+	at asSymbolInformation (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:251:22)
+	at /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:42
+	at Array.map (<anonymous>)
+	at asSymbolInformations (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:23)
+[2020-05-05 09:53:38.725] [exthost] [error] [vscoss.vscode-ansible] provider FAILED
+[2020-05-05 09:53:38.726] [exthost] [error] Error: name must not be falsy
+	at Function.validate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:420)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:369)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:398:174)
+	at asSymbolInformation (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:251:22)
+	at /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:42
+	at Array.map (<anonymous>)
+	at asSymbolInformations (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:23)
+[2020-05-05 10:09:22.716] [exthost] [error] [vscoss.vscode-ansible] provider FAILED
+[2020-05-05 10:09:22.717] [exthost] [error] Error: name must not be falsy
+	at Function.validate (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:420)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:411:369)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:398:174)
+	at asSymbolInformation (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:251:22)
+	at /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:42
+	at Array.map (<anonymous>)
+	at asSymbolInformations (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/vscode-languageclient/lib/protocolConverter.js:247:23)

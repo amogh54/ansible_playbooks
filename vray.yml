@@ -1,0 +1,23 @@
+---
+- hosts: vray
+  become: True
+  gather_facts: false
+  name: Priority Systems
+  tasks:
+    - name: Copy vray file
+      copy: 
+          src: /srv/local/.ChaosGroup
+          dest: /home/render
+          owner: render
+          group: dsusers
+          mode: '2777'
+      register: output
+    - debug:
+        var: output
+
+    - name: Verify Lic
+      shell: cat /home/render/.ChaosGroup/vrlclient.xml | grep Host | head -n 1
+      register: ver_lic
+    - debug:
+        var: ver_lic
+     

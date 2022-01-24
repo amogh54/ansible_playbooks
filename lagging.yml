@@ -1,0 +1,53 @@
+---
+- hosts: nomachine
+  become: True
+  gather_facts: false
+  name: Lagging Issues
+  tasks:
+    - name: Disable file sharing
+      lineinfile: dest=/usr/NX/etc/node.cfg regexp='^#EnableFileTransfer both'
+                  line="EnableFileTransfer none"
+
+    - name: File sharing check
+      shell: cat /usr/NX/etc/node.cfg | grep 'EnableFileTransfer none'
+      register: check_script
+    - debug:
+        var: check_script.stdout_lines[0]
+
+    - name: find out Lagging script  exists or not'
+      stat:
+        path: /usr/local/share/applications/lagging.desktop
+      register: lagresult 
+
+    - debug:
+        msg: "Lagging.desktop Exists"
+      when: lagresult.stat.exists == true
+
+    - name: Install lagging script
+      script: /srv/local/getlagging.sh
+      when: lagresult.stat.exists == false
+
+    - name: Verify Lagging Script is installed?
+      shell: ls -l /usr/local/share/applications/ | grep "lagging.desktop"
+      register: installed_script
+    - debug:
+        var: installed_script.stdout_lines[0]
+
+    - name: find out Audio script  exists or not'
+      stat:
+        path: /usr/local/share/applications/pulse.desktop
+      register: audioresult 
+
+    - debug:
+        msg: "pulse.desktop Exists"
+      when: audioresult.stat.exists == true
+
+    - name: Install audio script
+      script: /srv/local/getaudio.sh
+      when: audioresult.stat.exists == false
+
+    - name: Verify Audio script installed?
+      shell: ls -l /usr/local/share/applications/ | grep "pulse.desktop"
+      register: installed_script
+    - debug:
+        var: installed_script.stdout_lines[0]

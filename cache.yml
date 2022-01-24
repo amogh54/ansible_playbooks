@@ -1,0 +1,16 @@
+---
+- hosts: cache
+  name: Implementing cache 
+  gather_facts: False
+  become: True
+
+  tasks:
+    - name: Setting Cron for GNOME RESET
+      cron:
+        name: "Setting Gnome Reset"
+        minute: "*/15"
+        hour: "*"
+        day: "*"
+        month: "*"
+        weekday: "*"
+        job: "/ASE/08_rnd/autodesk/resetGnome.sh"

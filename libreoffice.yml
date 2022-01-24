@@ -1,0 +1,14 @@
+---
+- hosts: centos7
+  gather_facts: False
+  become: True
+  name: Installing LibreOffice
+  tasks:
+    - name: Copying Libre Office
+      copy: src=/srv/local/LibreOffice_7.2.2_Linux_x86-64_rpm.tar.gz dest=/srv/local mode=777
+
+    - name: Uncompress File
+      unarchive: src=/srv/local/LibreOffice_7.2.2_Linux_x86-64_rpm.tar.gz  dest=/srv/local
+
+    - name: Install LibreOffice
+      command: rpm -ivh /srv/local/LibreOffice_7.2.2.2_Linux_x86-64_rpm/RPMS/*.rpm

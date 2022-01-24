@@ -1,0 +1,30 @@
+---
+- hosts: elk
+  gather_facts: False
+  become: True
+  name: Installing ELK CLIENT
+  tasks:
+    - name: CREATE DIR TO COPY
+      shell: mkdir /srv/local/.elk
+      ignore_errors: true
+
+    - name: Copy ELK MODULES
+      copy: src=/src/local/elk dest=/srv/local/.elk mode=2777
+
+    - name: Install METRIC BEAT
+      shell: rpm -ivh   mkdir /srv/local/.elk/elk/metricbeat-7.13.3-x86_64.rpm
+
+    - name: MV METRICBEAT DIR
+      shell: mv /etc/metricbeat /srv/local/.elk/
+
+    - name: COPY REQUIRED METRIC MODULES
+      copy:
+        src: /srv/local/elk/metricbeat
+        dest: /etc
+        mode: 2755
+
+    - name: START METRICBEAT SERVCE
+      service:
+        name: metricbeat
+        state: restarted
+        enabled: true

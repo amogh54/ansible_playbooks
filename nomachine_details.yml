@@ -1,0 +1,24 @@
+---
+    - hosts: nomachine
+      become: True
+      gather_facts: false
+      tasks:
+        - name: Users Logged in 
+          shell: "who | cut -d' ' -f1 | sort | uniq"
+          register: check_login
+        - debug:
+            var: check_login.stdout_lines
+
+
+        - name: Port Check
+          shell: cat /usr/NX/etc/server.cfg | grep 'NXPort'
+          register: check_port
+        - debug:
+            var: check_port.stdout_lines[0]
+
+        - name: File sharing check
+          shell: cat /usr/NX/etc/node.cfg | grep 'EnableFileTransfer'
+          register: check_script
+            
+        - debug:
+            var: check_script.stdout_lines[0]

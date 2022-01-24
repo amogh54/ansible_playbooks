@@ -1,0 +1,72 @@
+---
+  - hosts: teradici
+    become: yes
+    name: Teradici Offline Installation
+    tasks:
+      - name: Copy Teradici RPM
+        copy: src=/srv/local/teradici  dest=/var/tmp/ mode=2777
+
+      - name: Install USB-VHCI
+        shell: yum localinstall /var/tmp/teradici/usb-vhci/* -y
+
+      - name: Install PCOIP-AGENT
+        shell: yum localinstall /var/tmp/teradici/pcoip-agent/*  -y
+
+      - name: Install XORG11
+        shell: yum localinstall /var/tmp/teradici/xorg11/* -y
+
+      - name: Copy LeostreamAgent.jar
+        copy: 
+          src: /ASE/08_rnd/teradici/'{{ item }}'
+          dest: /var/tmp
+          mode: 777
+        with_items:
+          - LeostreamAgent.jar
+          - leostreamagent.conf
+          - LeostreamAgentJava-6.0.11.0.jar
+          - auto-install.xml
+
+      - name: Check files are copied or not
+        shell: ls -l /var/tmp | grep *.jar
+        register: check_package
+
+      - debug:
+          var: check_package
+
+      - name: Install Package through JAVA 
+        command: java -jar /var/tmp/LeostreamAgentJava-5.0.11.0.jar auto-install-xml-path /var/tmp/./auto-install.xml
+
+      - name: Permission to var/tmp
+        command: chmod -R 777 /var/tmp
+
+      - name: Check files are copied or not
+        shell: ls /var/tmp | grep leostreamagent.conf 
+        register: check_package
+
+      - debug:
+          var: check_package
+
+      - name: Copy leostreamagent.conf file
+        command: rsync -avpr /var/tmp/leostreamagent.conf /opt/leostreamagent
+        
+
+      - name: Start LEOSTREAMAGENT AND PCOIP-AGENT Service
+        service:
+          name: '{{ item }}'
+          state: restarted
+        with_items:
+          - leostreamagentd
+          - pcoip-agent
+
+      - name: Install Other required Packages
+        shell: yum localinstall -y /var/tmp/teradici/others/*
+
+      - name: Copy Local Export
+        copy: 
+          src: /ASE/08_rnd/autodesk/tera/local_path_export.sh
+          dest: /etc/profile.d
+          mode: u=rwx,g=rwx,o=rwx
+        
+
+
+

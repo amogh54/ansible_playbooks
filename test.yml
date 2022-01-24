@@ -1,0 +1,10 @@
+--- 
+  - hosts: teradc
+    gather_facts: false
+    name: Gather System Information
+    tasks: 
+
+      - name: Download EPEL Repo
+        get-url: 
+          url: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+          dest: /etc/yum.repos.d/epel-release-latest-7.noarch.rpm

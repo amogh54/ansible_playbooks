@@ -1,0 +1,9 @@
+---
+- hosts: prio
+  become: true
+  tasks:
+    - name: Copy Animation Script
+      copy: src=/share/aquib.sayyed/Animation.sh dest=/srv/local mode=777
+    
+    - name: Host entry
+      shell: echo "103.226.242.122 licSrv autoDeskLicSrv" >> /etc/hosts

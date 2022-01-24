@@ -1,0 +1,7 @@
+---
+ - hosts: 10.11.2.3:10.11.2.4:10.11.2.5
+   tasks:
+    - debug: 
+        msg:    
+         - "The value of x is: {{x}}"
+        # - "The value of y is: {{y}}"

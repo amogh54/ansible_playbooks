@@ -1,0 +1,107 @@
+---
+- hosts: teradc
+  become: True
+  gather_facts: true
+  name: Installing Teradc on Workstations
+  tasks:  
+    - name: Initial Repo changes (Moving local repo)
+      command: mv /etc/yum.repos.d/CentOS-Base.repo /srv/local
+
+    - name: Configuring Centos Original Repo
+      command: mv /etc/yum.repos.d/CentOS-Base.repo.org  /etc/yum.repos.d/CentOS-Base.repo
+
+    - name: Install TERADC RPM
+      yum:  
+        name: https://downloads.teradici.com/rhel/teradici-repo-latest.noarch.rpm
+        state: present
+
+    - name: Download EPEL Repo
+      command: wget -P /etc/yum.repos.d https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+
+    - name: Install EPEL PACKAGE
+      shell: rpm -ivh /etc/yum.repos.d/epel-release-latest-7.noarch.rpm
+
+    - name: Install Required Package of Teradc
+      yum:
+        name:
+          - usb-vhci
+          - pcoip-agent-graphics
+          - xorg-x11-server-Xorg
+        state: present
+
+    - name: Copy LeostreamAgent.jar
+      copy: 
+        src: /ASE/08_rnd/teradici/LeostreamAgent.jar
+        dest: /var/tmp
+        mode: 777
+
+    - name: Copy leostreamagent.conf
+      copy: 
+        src: /ASE/08_rnd/teradici/leostreamagent.conf
+        dest: /var/tmp
+        mode: 777
+    
+    - name: Copy LeostreamAgentJava-5.0.11.0.jar
+      copy: 
+        src: /ASE/08_rnd/teradici/LeostreamAgentJava-5.0.11.0.jar
+        dest: /var/tmp
+        mode: 777
+
+    - name: Copy auto-install.xml
+      copy: 
+        src: /ASE/08_rnd/teradici/auto-install.xml
+        dest: /var/tmp
+        mode: 777
+
+    - name: Check files are copied or not
+      shell: ls /var/tmp
+      register: check_package
+
+    - debug:
+        var: check_package
+
+    - name: Install Package through JAVA 
+      command: java -jar /var/tmp/LeostreamAgentJava-5.0.11.0.jar auto-install-xml-path /var/tmp/./auto-install.xml
+
+    - name: Permission to var/tmp
+      command: chmod -R 777 /var/tmp
+
+    - name: Check files are copied or not
+      shell: ls /var/tmp
+      register: check_package
+
+    - debug:
+        var: check_package
+
+    - name: Copy leostreamagent.conf file
+      command: rsync -avpr /var/tmp/leostreamagent.conf /opt/leostreamagent
+        
+
+    - name: Start LEOSTREAMAGENT AND PCOIP-AGENT Service
+      service:
+        name:  leostreamagentd
+        state: restarted
+
+    - name: Start LEOSTREAMAGENT AND PCOIP-AGENT Service
+      service:
+        name:  pcoip-agent 
+        state: restarted
+
+    - name: Install Other Dependencies
+      yum:
+        name:
+          - compat-libtiff3
+          - libfam.so.0
+          - mesa-libGLU
+          - libpng12
+          - gamin
+          - libpng12
+          - libXp
+          - libtiff.so.3
+        state: present
+
+    - name: Copy Local Export
+      copy: 
+        src: /ASE/08_rnd/autodesk/tera/local_path_export.sh
+        dest: /etc/profile.d
+        mode: u=rwx,g=rwx,o=rwx

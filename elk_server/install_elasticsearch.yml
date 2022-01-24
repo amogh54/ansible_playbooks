@@ -1,0 +1,26 @@
+---
+- hosts: elk-server
+  become: True
+  gather_facts: True
+  tasks:
+    - name: Create ELK repo
+      copy:
+        src: ./vars/elasticsearch.repo 
+        dest: /etc/yum.repos.d/
+        owner: root
+    
+    - name: gpg key
+      shell: sudo rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
+    
+    - name: enable repo
+      shell: "{{ item }}"
+      with_items:
+        - rm -rf /var/cache/yum/*
+        - yum clean all 
+        - yum makecache
+
+    - name: Install elasticsearch
+      yum:
+        name: elasticsearch
+        state: present
+ 

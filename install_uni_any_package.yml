@@ -1,0 +1,9 @@
+---
+ - name: Install or Uninstall any Package
+   hosts: 10.11.2.6:10.11.2.5
+   gather_facts: false
+   tasks:
+    - name: "Name of Package: {{pkg}}"
+      yum:
+       name: "{{pkg}}"
+       state: "{{req_state}}"

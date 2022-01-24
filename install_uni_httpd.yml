@@ -1,0 +1,8 @@
+---
+ - name: This is playbook to install HTTPD package
+   hosts: 10.11.2.3:10.11.2.5:10.11.2.4
+   tasks:
+    - name: Installing HTTPD Package through YUM
+      yum:
+       name: httpd
+       state: present

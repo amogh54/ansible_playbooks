@@ -1,0 +1,54 @@
+---
+- hosts: lampserver
+  become: True
+  gather_facts: false
+  name: Deploying LAMP Server
+  vars:
+    mysql_root_password: root
+
+
+  tasks:
+    - name: Installing Apache Server
+      yum: name=httpd state=latest
+
+   
+
+    - name: Install MYSQL
+      yum:
+        name: mariadb-server #debian: mysql-server
+        state: present
+    - name: Install the Python MySQL Support Libraries
+      yum: pkg=MySQL-python state=latest
+
+    - name: start mysql server and enable it on reboot
+      service: name=mariadb state=started enabled=true
+    
+    - name: update mysql root password for all root accounts
+      mysql_user:
+        name: root
+        host: localhost
+        password: "{{ mysql_root_password }}"
+        login_user: root
+        login_password: "{{ mysql_root_password }}"
+        check_implicit_admin: yes
+        priv: "*.*:ALL,GRANT"
+    
+    - name: Move my.cnf file
+      shell: mv /etc/my.cnf /etc/my.cnf_bkp
+      
+
+    - name: Copy the root credentials as .my.cnf file
+      template: src=/etc/ansible/playbooks/maria/root.cnf.j2 dest=/etc/my.cnf mode=0600
+
+    - name: Create a New Test DB called MyNewDB
+      mysql_db: name=MyNewDB state=present login_user=root login_password={{ mysql_root_password }}
+
+
+    - name: Install php packages
+      yum: name=phpmyadmin state=present
+
+    - name: Start Apache Server
+      service: name=httpd state=restarted
+  
+
+

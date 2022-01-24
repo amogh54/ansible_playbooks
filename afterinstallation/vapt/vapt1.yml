@@ -1,0 +1,4 @@
+---
+- hosts: vapt
+  gather_facts: True
+  become: 

@@ -1,0 +1,7 @@
+---
+    - hosts: wallpaper
+      become: True
+      gather_facts: false
+      tasks:
+        - name: Changing Wallpaper
+          script: /ASE/app/00_workStationSetup/wallpaper.sh

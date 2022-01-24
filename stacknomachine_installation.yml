@@ -1,0 +1,267 @@
+---
+- hosts: nomachine
+  become: True
+  gather_facts: true
+  vars_prompt:
+    - name: "port"
+      prompt: "Which port u want to configure on first machine"
+      private: no
+  name: NoMachine Installation
+  tasks:
+    - name: Remove existing nomachine
+      yum:  name=nomachine state=absent
+      ignore_errors: True
+
+    - name: Clear config files
+      shell: rm -rf /usr/NX
+      ignore_errors: True
+      
+    - name: Copy NoMachine RPM
+      copy: src=/srv/local/nomachine_7.1.3_1_x86_64.rpm dest=/srv/local mode=777
+
+    - name: Install NoMachine
+      shell: rpm -ivh /srv/local/nomachine_7.1.3_1_x86_64.rpm
+
+    - name: Assign required port
+      lineinfile: dest=/usr/NX/etc/server.cfg regexp='^#NXPort 4000'
+                  line="NXPort {{ port }}"
+
+    - name: Port Check
+      shell: cat /usr/NX/etc/server.cfg | grep 'NXPort'
+      register: check_port
+    - debug:
+        var: check_port.stdout_lines[0]
+
+    - name: Disable file sharing
+      lineinfile: dest=/usr/NX/etc/node.cfg regexp='^#EnableFileTransfer both'
+                  line="EnableFileTransfer none"
+      notify: start nx
+
+    - name: File sharing check
+      shell: cat /usr/NX/etc/node.cfg | grep 'EnableFileTransfer none'
+      register: check_script
+    - debug:
+        var: check_script.stdout_lines[0]
+
+    - name: find out Lagging script  exists or not'
+      stat:
+        path: /usr/local/share/applications/lagging.desktop
+      register: lagresult 
+
+    - debug:
+        msg: "Lagging.desktop Exists"
+      when: lagresult.stat.exists == true
+
+    - name: Install lagging script
+      script: /srv/local/getlagging.sh
+      when: lagresult.stat.exists == false
+
+    - name: Check script Lagging installed?
+      shell: ls -l /usr/local/share/applications/ | grep "lagging.desktop"
+      register: installed_script
+    - debug:
+        var: installed_script.stdout_lines[0]
+
+    - name: find out Audio script  exists or not'
+      stat:
+        path: /usr/local/share/applications/pulse.desktop
+      register: audioresult 
+
+    - debug:
+        msg: "pulse.desktop Exists"
+      when: audioresult.stat.exists == true
+
+    - name: Install audio script
+      script: /srv/local/getaudio.sh
+      when: audioresult.stat.exists == false
+
+    - name: Check Audio script installed?
+      shell: ls -l /usr/local/share/applications/ | grep "pulse.desktop"
+      register: installed_script
+    - debug:
+        var: installed_script.stdout_lines[0]
+  
+  handlers: 
+  - name: start nx
+    shell: /etc/NX/nxserver --restart 
+
+- hosts: nomachine1
+  become: True
+  gather_facts: true
+  vars_prompt:
+    - name: "port"
+      prompt: "Which port u want to configure for second system"
+      private: no
+  name: NoMachine Installation
+  tasks:
+    - name: Remove existing nomachine
+      yum:  name=nomachine state=absent
+      ignore_errors: True
+
+    - name: Clear config files
+      shell: rm -rf /usr/NX
+      ignore_errors: True
+      
+    - name: Copy NoMachine RPM
+      copy: src=/srv/local/nomachine_7.1.3_1_x86_64.rpm dest=/srv/local mode=777
+
+    - name: Install NoMachine
+      shell: rpm -ivh /srv/local/nomachine_7.1.3_1_x86_64.rpm
+
+    - name: Assign required port
+      lineinfile: dest=/usr/NX/etc/server.cfg regexp='^#NXPort 4000'
+                  line="NXPort {{ port }}"
+
+    - name: Port Check
+      shell: cat /usr/NX/etc/server.cfg | grep 'NXPort'
+      register: check_port
+    - debug:
+        var: check_port.stdout_lines[0]
+
+    - name: Disable file sharing
+      lineinfile: dest=/usr/NX/etc/node.cfg regexp='^#EnableFileTransfer both'
+                  line="EnableFileTransfer none"
+      notify: start nx
+
+    - name: File sharing check
+      shell: cat /usr/NX/etc/node.cfg | grep 'EnableFileTransfer none'
+      register: check_script
+    - debug:
+        var: check_script.stdout_lines[0]
+
+    - name: find out Lagging script  exists or not?
+      stat:
+        path: /usr/local/share/applications/lagging.desktop
+      register: lagresult 
+
+    - debug:
+        msg: "Lagging.desktop Exists"
+      when: lagresult.stat.exists == true
+
+    - name: Install lagging script
+      script: /srv/local/getlagging.sh
+      when: lagresult.stat.exists == false
+
+    - name: Check script Lagging installed?
+      shell: ls -l /usr/local/share/applications/ | grep "lagging.desktop"
+      register: installed_script
+    - debug:
+        var: installed_script.stdout_lines[0]
+
+    - name: find out Audio script  exists or not?
+      stat:
+        path: /usr/local/share/applications/pulse.desktop
+      register: audioresult 
+
+    - debug:
+        msg: "pulse.desktop Exists"
+      when: audioresult.stat.exists == true
+
+    - name: Install audio script
+      script: /srv/local/getaudio.sh
+      when: audioresult.stat.exists == false
+
+    - name: Check Audio script installed?
+      shell: ls -l /usr/local/share/applications/ | grep "pulse.desktop"
+      register: installed_script
+    - debug:
+        var: installed_script.stdout_lines[0]
+  
+  handlers: 
+  - name: start nx
+    shell: /etc/NX/nxserver --restart
+
+
+
+- hosts: nomachine2
+  become: True
+  gather_facts: false
+  vars_prompt:
+    - name: "port"
+      prompt: "Which port u want to configure"
+      private: no
+  name: NoMachine Installation
+  tasks:
+    - name: Remove existing nomachine
+      yum:  name=nomachine state=absent
+      ignore_errors: True
+
+    - name: Clear config files
+      shell: rm -rf /usr/NX
+      ignore_errors: True
+      
+    - name: Copy NoMachine RPM
+      copy: src=/ASE/app/00_workStationSetup/nomachine_7.1.3_1_x86_64.rpm  dest=/srv/local mode=777
+
+    - name: Install NoMachine
+      shell: rpm -ivh /srv/local/nomachine_7.1.3_1_x86_64.rpm
+
+    - name: Check Installed Version
+      shell: /etc/NX/nxserver --version
+      register: check_version
+
+    - debug:
+        var: check_version
+
+    - name: Assign required port
+      lineinfile: dest=/usr/NX/etc/server.cfg regexp='^#NXPort 4000'
+                  line="NXPort {{ port }}"
+
+    - name: Port Check
+      shell: cat /usr/NX/etc/server.cfg | grep 'NXPort'
+      register: check_port
+    - debug:
+        var: check_port.stdout_lines[0]
+
+    - name: Disable file sharing
+      lineinfile: dest=/usr/NX/etc/node.cfg regexp='^#EnableFileTransfer both'
+                  line="EnableFileTransfer none"
+      notify: start nx
+
+    - name: File sharing check
+      shell: cat /usr/NX/etc/node.cfg | grep 'EnableFileTransfer none'
+      register: check_script
+    - debug:
+        var: check_script.stdout_lines[0]
+
+    - name: find out Lagging script  exists or not'
+      stat:
+        path: /usr/local/share/applications/lagging.desktop
+      register: lagresult 
+
+    - debug:
+        msg: "Lagging.desktop Exists"
+      when: lagresult.stat.exists == true
+
+    - name: Install lagging script
+      script: /srv/local/getlagging.sh
+      when: lagresult.stat.exists == false
+
+    - name: Verify Lagging Script is installed?
+      shell: ls -l /usr/local/share/applications/ | grep "lagging.desktop"
+      register: installed_script
+    - debug:
+        var: installed_script.stdout_lines[0]
+
+    - name: find out Audio script  exists or not'
+      stat:
+        path: /usr/local/share/applications/pulse.desktop
+      register: audioresult 
+
+    - debug:
+        msg: "pulse.desktop Exists"
+      when: audioresult.stat.exists == true
+
+    - name: Install audio script
+      script: /srv/local/getaudio.sh
+      when: audioresult.stat.exists == false
+
+    - name: Verify Audio script installed?
+      shell: ls -l /usr/local/share/applications/ | grep "pulse.desktop"
+      register: installed_script
+    - debug:
+        var: installed_script.stdout_lines[0]
+  
+  handlers: 
+  - name: start nx
+    shell: /etc/NX/nxserver --restart 

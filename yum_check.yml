@@ -1,0 +1,11 @@
+---
+    - hosts: update
+      become: True
+      gather_facts: false
+      tasks:
+        - name: Checking nomachine version
+          yum:  
+            list: nomachine
+          register: pkg
+        - debug:
+           var: pkg

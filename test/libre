@@ -1,0 +1,6 @@
+- name: Installing LibreOffice RPM
+      yum: 
+        name: "{{ item }}"
+        state: present
+      with_fileglob:
+        - "/srv/local/LibreOffice_6.4.3.2_Linux_x86-64_rpm/RPMS/*.rpm"

@@ -1,0 +1,10 @@
+--- 
+-  
+  hosts: 
+    local: ~
+  - file : 
+      group: amogh
+      mode: "2770"
+      owner: amogh
+      path: /root/tesla.txt
+    name: "Creating a file"

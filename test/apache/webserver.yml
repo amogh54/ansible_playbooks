@@ -1,0 +1,23 @@
+---
+- hosts: gui
+  become: True
+  gather_facts: False
+  name: CONFIGURE WEBSERVER WITH APACHE
+  tasks:
+    - name: Installing Apache
+      yum: name=httpd state=present
+  
+    - name: Copy index file
+      copy: src=/etc/ansible/playbooks/apache/index.html dest=/var/www/html
+
+    - name: Start service 
+      service: name=httpd state=started enabled=yes
+
+    - name: Run Apache on different port
+      lineinfile: dest=/etc/httpd/conf/httpd.conf regexp=^Listen
+                  line="Listen 8080"
+      notify: start httpd
+  
+  handlers: 
+  - name: start httpd
+    service: name=httpd state=restarted

@@ -1,0 +1,11 @@
+---
+- hosts: ase
+  become: True
+  gather_facts: false
+  name: List
+  tasks:
+    - name: Check IP Address
+      shell: ip -4 addr show scope global | awk '$1 == "inet" {print $2}'
+      register: ip_check
+    - debug:
+        var: ip_check.stdout

@@ -1,0 +1,7 @@
+---
+  - name: Install NoMachine
+    import_playbook: /etc/ansible/playbooks/nomachine_basic_installation.yml 
+  
+  - name: Post Installation playbook
+    import_playbook: /etc/ansible/playbooks/afterinstallation/after_installation.yml
+

@@ -1,0 +1,30 @@
+---
+- hosts: centos7
+  become: True
+  gather_facts: true
+  name: POST INSTALLATION STEPS
+  tasks:
+    - name: Check audiofile
+      shell: rpm -qa audiofile
+      register: audio_status
+
+    - debug:
+        var: audio_status
+
+    - name: Check OS version
+      shell: cat /etc/centos-release
+      register: os_status
+    - debug:
+        var: os_status
+
+    - name: Install Audio rpm
+      shell: rpm -ivh /ASE/08_rnd/audiofile-0.3.6-4.el7.x86_64.rpm
+      when: audio_status.stdout == "" and os_status.stdout == "CentOS Linux release 7.7.1908 (Core)" or audio_status.stdout == "" and os_status.stdout == "CentOS Linux release 7.9.2009 (Core)"
+
+    - name: Check audiofile-devel
+      shell: rpm -qa audiofile-devel
+      register: audiod_status
+
+    - name: Install Audio Devel rpm
+      shell: rpm -ivh /ASE/08_rnd/audiofile-devel-0.3.6-4.el7.x86_64.rpm
+      when: audiod_status.stdout == "" and os_status.stdout == "CentOS Linux release 7.7.1908 (Core)" or audio_status.stdout == "" and os_status.stdout == "CentOS Linux release 7.9.2009 (Core)"

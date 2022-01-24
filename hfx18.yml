@@ -1,0 +1,53 @@
+---
+- hosts: hfx
+  become: true
+  vars_prompt:
+    - name: "hfx_server_ip"
+      prompt: "Enter Houdini Lisense Server IP"
+      private: no
+  name: Setup HFX18
+  tasks:
+    - name: check hostname
+      shell: echo $HOSTNAME
+      register: result
+
+    - debug:
+        var: result.stdout
+
+    - debug: var=ansible_default_ipv4.address
+
+    - name: Check hostname is already assigned
+      shell: cat /etc/hosts | grep  {{ result.stdout }}
+      ignore_errors: yes
+      register: host_name
+    - debug:
+        var: host_name.stdout
+
+    - name: Append hostname and IP in hosts
+      shell: echo  {{ ansible_default_ipv4.address }} {{ result.stdout }} >> /etc/hosts
+      when: host_name.stdout == "" 
+
+    - name: check hfx
+      shell: who | cut -d ' ' -f 1 | sort | uniq | grep -v -e "root"
+      register: user
+
+    - debug: 
+       var: user.stdout
+
+    - name: Create sessi file
+      file:
+        path: /home/{{ user.stdout }}/.sesi_licenses.pref
+        state: touch
+        owner: "{{ user.stdout }}"
+        group: dsusers
+
+    - name: Enter License Entry in .sesi_licenses file
+      shell: echo 'serverhost={{ hfx_server_ip }}' > /home/{{ user.stdout }}/.sesi_licenses.pref
+
+    - name: Check HFX Entry
+      shell: cat /home/{{ user.stdout }}/.sesi_licenses.pref
+      register: check_status
+    - debug:
+        var: check_status.stdout
+
+

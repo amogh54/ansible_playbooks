@@ -1,0 +1,8 @@
+file:///etc/ansible/playbooks/first.yml {"mtime":1578024539146,"ctime":1578024539146,"size":114,"etag":"34dqrsqlq3l","orphaned":false}
+---
+ - hosts: vlan2
+   inventory
+   tasks:
+    - name: To start/stop muster
+      shell:
+        free -g

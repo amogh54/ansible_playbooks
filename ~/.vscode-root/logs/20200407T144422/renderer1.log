@@ -1,0 +1,1 @@
+[2020-04-07 14:44:30.300] [renderer1] [warning] UNRESPONSIVE extension host, 'vscoss.vscode-ansible' took 99% of 1112.239ms, saved PROFILE here: '/tmp/exthost-a56014.cpuprofile' [{"id":"gc","total":6086,"percentage":1},{"id":"program","total":155,"percentage":0},{"id":"self","total":6628,"percentage":1},{"id":"vscoss.vscode-ansible","total":1099212,"percentage":99}]

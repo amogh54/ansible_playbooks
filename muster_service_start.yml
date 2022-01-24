@@ -1,0 +1,9 @@
+---
+  - hosts: vlan12
+    gather_facts: false
+    tasks:
+     - name: "Name of the Service: {{ser}}"
+       service:
+         name: "{{ser}}"
+         state: "{{req_state}}"
+    

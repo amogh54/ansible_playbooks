@@ -1,0 +1,66 @@
+---
+-   hosts:  gui
+    name: Installing Lamp Server
+    gather_facts: False
+    become: True
+    vars:
+        mysql_root_password:  "root"
+    tasks:
+        -   name: Installing Apache package
+            yum: 
+                name:
+                    -   httpd
+                    -   mod_ssl
+                state:  present
+        
+        -   name: Installing PHP
+            yum:
+                name:
+                    -   php
+                    -   php-mysql
+                    -   php-pdo
+                    -   php-gd
+                    -   php-mbstring
+        -   name: PHP website
+            shell: echo "<?php phpinfo (); ?>" > /var/www/html/info.php
+
+        -   name: Change port of Apache
+            lineinfile: dest=/etc/httpd/conf/httpd.conf regexp=^Listen
+                        line="Listen 8080"
+            notify: start httpd
+
+    
+        -   name: Install Mariadb
+            yum: 
+                name:
+                    -   mariadb
+                    -   mariadb-server 
+                    -   MySQL-python
+                state: latest 
+        
+        -   name: Start service 
+            service: name=mariadb state=started enabled=yes
+
+        -   name: Ensuring mariadb available on all ports
+            lineinfile: dest=/etc/my.cnf regexp=^Bind-Address
+                        line="Bind-Address=0.0.0.0:3306"
+            notify: start mariadb
+
+        -   name: my_sql password root
+            mysql_user:
+                login_user: root
+                login_password: "{{mysql_root_password}}"
+                name: root
+                check_implicit_admin: yes
+                password: "{{mysql_root_password}}"
+                host: localhost
+                priv: "*.*:ALL,GRANT"
+             
+    
+
+    handlers: 
+        -   name: start httpd
+            service: name=httpd state=restarted
+   
+        -   name: start mariadb
+            service: name=mariadb state=restarted

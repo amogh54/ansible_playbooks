@@ -1,0 +1,146 @@
+[2020-07-31 17:04:03.528] [exthost] [info] extension host started
+[2020-07-31 17:04:03.615] [exthost] [info] ExtensionService#_doActivateExtension vscoss.vscode-ansible {"startup":false,"extensionId":{"value":"vscoss.vscode-ansible","_lower":"vscoss.vscode-ansible"},"activationEvent":"onLanguage:yaml"}
+[2020-07-31 17:04:03.615] [exthost] [info] ExtensionService#loadCommonJSModule file:///root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/out/extension
+[2020-07-31 17:04:04.174] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"extensionId":{"value":"vscode.debug-auto-launch","_lower":"vscode.debug-auto-launch"},"activationEvent":"*"}
+[2020-07-31 17:04:04.174] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/debug-auto-launch/dist/extension
+[2020-07-31 17:04:04.177] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"extensionId":{"value":"vscode.emmet","_lower":"vscode.emmet"},"activationEvent":"*"}
+[2020-07-31 17:04:04.177] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/emmet/dist/extension
+[2020-07-31 17:04:04.199] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"extensionId":{"value":"vscode.git","_lower":"vscode.git"},"activationEvent":"*"}
+[2020-07-31 17:04:04.199] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/git/dist/main
+[2020-07-31 17:04:04.244] [exthost] [info] ExtensionService#_doActivateExtension vscode.github-authentication {"startup":true,"extensionId":{"value":"vscode.github-authentication","_lower":"vscode.github-authentication"},"activationEvent":"*"}
+[2020-07-31 17:04:04.244] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/github-authentication/dist/extension.js
+[2020-07-31 17:04:04.248] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"extensionId":{"value":"vscode.merge-conflict","_lower":"vscode.merge-conflict"},"activationEvent":"*"}
+[2020-07-31 17:04:04.248] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/merge-conflict/dist/extension
+[2020-07-31 17:04:04.251] [exthost] [info] ExtensionService#_doActivateExtension vscode.search-result {"startup":true,"extensionId":{"value":"vscode.search-result","_lower":"vscode.search-result"},"activationEvent":"*"}
+[2020-07-31 17:04:04.251] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/search-result/dist/extension.js
+[2020-07-31 17:04:04.252] [exthost] [info] ExtensionService#_doActivateExtension vscode.vscode-account {"startup":true,"extensionId":{"value":"vscode.vscode-account","_lower":"vscode.vscode-account"},"activationEvent":"*"}
+[2020-07-31 17:04:04.252] [exthost] [info] ExtensionService#loadCommonJSModule file:///usr/share/code/resources/app/extensions/vscode-account/dist/extension.js
+[2020-07-31 17:04:04.257] [exthost] [error] Activating extension vscoss.vscode-ansible failed due to an error:
+[2020-07-31 17:04:04.260] [exthost] [error] Error: Cannot find module 'core-util-is'
+Require stack:
+- /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/verror/lib/verror.js
+- /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/jsprim/lib/jsprim.js
+- /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/http-signature/lib/signer.js
+- /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/http-signature/lib/index.js
+- /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/request/request.js
+- /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/request/index.js
+- /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/request-promise/lib/rp.js
+- /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/out/cloudConsoleLauncher.js
+- /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/out/cloudShellRunner.js
+- /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/out/extension.js
+- /usr/share/code/resources/app/out/vs/loader.js
+- /usr/share/code/resources/app/out/bootstrap-amd.js
+- /usr/share/code/resources/app/out/bootstrap-fork.js
+	at Function.Module._resolveFilename (internal/modules/cjs/loader.js:717:15)
+	at Module._load (internal/modules/cjs/loader.js:622:27)
+	at Module._load (electron/js2c/asar.js:717:26)
+	at Function.Module._load (electron/js2c/asar.js:717:26)
+	at Function.t._load (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:918:348)
+	at Function.i._load (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:887:754)
+	at Function.n._load (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:884:63)
+	at Module.require (internal/modules/cjs/loader.js:775:19)
+	at Module.patchedRequire [as require] (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/diagnostic-channel/dist/src/patchRequire.js:14:46)
+	at n (/usr/share/code/resources/app/out/vs/loader.js:15:524)
+	at Object.<anonymous> (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/verror/lib/verror.js:9:19)
+	at Module.o._compile (/usr/share/code/resources/app/out/vs/loader.js:15:749)
+	at Object.Module._extensions..js (internal/modules/cjs/loader.js:892:10)
+	at Module.load (internal/modules/cjs/loader.js:735:32)
+	at Module._load (internal/modules/cjs/loader.js:648:12)
+	at Module._load (electron/js2c/asar.js:717:26)
+	at Function.Module._load (electron/js2c/asar.js:717:26)
+	at Function.t._load (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:918:348)
+	at Function.i._load (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:887:754)
+	at Function.n._load (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:884:63)
+	at Module.require (internal/modules/cjs/loader.js:775:19)
+	at Module.patchedRequire [as require] (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/diagnostic-channel/dist/src/patchRequire.js:14:46)
+	at n (/usr/share/code/resources/app/out/vs/loader.js:15:524)
+	at Object.<anonymous> (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/jsprim/lib/jsprim.js:9:18)
+	at Module.o._compile (/usr/share/code/resources/app/out/vs/loader.js:15:749)
+	at Object.Module._extensions..js (internal/modules/cjs/loader.js:892:10)
+	at Module.load (internal/modules/cjs/loader.js:735:32)
+	at Module._load (internal/modules/cjs/loader.js:648:12)
+	at Module._load (electron/js2c/asar.js:717:26)
+	at Function.Module._load (electron/js2c/asar.js:717:26)
+	at Function.t._load (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:918:348)
+	at Function.i._load (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:887:754)
+	at Function.n._load (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:884:63)
+	at Module.require (internal/modules/cjs/loader.js:775:19)
+	at Module.patchedRequire [as require] (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/diagnostic-channel/dist/src/patchRequire.js:14:46)
+	at n (/usr/share/code/resources/app/out/vs/loader.js:15:524)
+	at Object.<anonymous> (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/http-signature/lib/signer.js:8:14)
+	at Module.o._compile (/usr/share/code/resources/app/out/vs/loader.js:15:749)
+	at Object.Module._extensions..js (internal/modules/cjs/loader.js:892:10)
+	at Module.load (internal/modules/cjs/loader.js:735:32)
+	at Module._load (internal/modules/cjs/loader.js:648:12)
+	at Module._load (electron/js2c/asar.js:717:26)
+	at Function.Module._load (electron/js2c/asar.js:717:26)
+	at Function.t._load (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:918:348)
+	at Function.i._load (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:887:754)
+	at Function.n._load (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:884:63)
+	at Module.require (internal/modules/cjs/loader.js:775:19)
+	at Module.patchedRequire [as require] (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/diagnostic-channel/dist/src/patchRequire.js:14:46)
+	at n (/usr/share/code/resources/app/out/vs/loader.js:15:524)
+	at Object.<anonymous> (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/http-signature/lib/index.js:4:14)
+	at Module.o._compile (/usr/share/code/resources/app/out/vs/loader.js:15:749)
+	at Object.Module._extensions..js (internal/modules/cjs/loader.js:892:10)
+	at Module.load (internal/modules/cjs/loader.js:735:32)
+	at Module._load (internal/modules/cjs/loader.js:648:12)
+	at Module._load (electron/js2c/asar.js:717:26)
+	at Function.Module._load (electron/js2c/asar.js:717:26)
+	at Function.t._load (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:918:348)
+	at Function.i._load (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:887:754)
+	at Function.n._load (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:884:63)
+	at Module.require (internal/modules/cjs/loader.js:775:19)
+	at Module.patchedRequire [as require] (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/diagnostic-channel/dist/src/patchRequire.js:14:46)
+	at n (/usr/share/code/resources/app/out/vs/loader.js:15:524)
+	at Object.<anonymous> (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/request/request.js:11:21)
+	at Module.o._compile (/usr/share/code/resources/app/out/vs/loader.js:15:749)
+	at Object.Module._extensions..js (internal/modules/cjs/loader.js:892:10)
+	at Module.load (internal/modules/cjs/loader.js:735:32)
+	at Module._load (internal/modules/cjs/loader.js:648:12)
+	at Module._load (electron/js2c/asar.js:717:26)
+	at Function.Module._load (electron/js2c/asar.js:717:26)
+	at Function.t._load (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:918:348)
+	at Function.i._load (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:887:754)
+	at Function.n._load (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:884:63)
+	at Module.require (internal/modules/cjs/loader.js:775:19)
+	at Module.patchedRequire [as require] (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/diagnostic-channel/dist/src/patchRequire.js:14:46)
+	at n (/usr/share/code/resources/app/out/vs/loader.js:15:524)
+	at Object.<anonymous> (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/request/index.js:143:19)
+	at Module.o._compile (/usr/share/code/resources/app/out/vs/loader.js:15:749)
+	at Object.Module._extensions..js (internal/modules/cjs/loader.js:892:10)
+	at Module.load (internal/modules/cjs/loader.js:735:32)
+	at Module._load (internal/modules/cjs/loader.js:648:12)
+	at Module._load (electron/js2c/asar.js:717:26)
+	at Function.Module._load (electron/js2c/asar.js:717:26)
+	at Function.t._load (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:918:348)
+	at Function.i._load (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:887:754)
+	at Function.n._load (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:884:63)
+	at Module.require (internal/modules/cjs/loader.js:775:19)
+	at Module.patchedRequire [as require] (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/diagnostic-channel/dist/src/patchRequire.js:14:46)
+	at n (/usr/share/code/resources/app/out/vs/loader.js:15:524)
+	at /root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/request-promise/lib/rp.js:11:16
+	at module.exports (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/stealthy-require/lib/index.js:62:23)
+	at Object.<anonymous> (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/request-promise/lib/rp.js:10:19)
+	at Module.o._compile (/usr/share/code/resources/app/out/vs/loader.js:15:749)
+	at Object.Module._extensions..js (internal/modules/cjs/loader.js:892:10)
+	at Module.load (internal/modules/cjs/loader.js:735:32)
+	at Module._load (internal/modules/cjs/loader.js:648:12)
+	at Module._load (electron/js2c/asar.js:717:26)
+	at Function.Module._load (electron/js2c/asar.js:717:26)
+	at Function.t._load (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:918:348)
+	at Function.i._load (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:887:754)
+	at Function.n._load (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:884:63)
+	at Module.require (internal/modules/cjs/loader.js:775:19)
+	at Module.patchedRequire [as require] (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/node_modules/diagnostic-channel/dist/src/patchRequire.js:14:46)
+	at n (/usr/share/code/resources/app/out/vs/loader.js:15:524)
+	at Object.<anonymous> (/root/.vscode/extensions/vscoss.vscode-ansible-0.5.2/out/cloudConsoleLauncher.js:11:17)
+	at Module.o._compile (/usr/share/code/resources/app/out/vs/loader.js:15:749)
+	at Object.Module._extensions..js (internal/modules/cjs/loader.js:892:10)
+	at Module.load (internal/modules/cjs/loader.js:735:32)
+	at Module._load (internal/modules/cjs/loader.js:648:12)
+	at Module._load (electron/js2c/asar.js:717:26)
+	at Function.Module._load (electron/js2c/asar.js:717:26)
+	at Function.t._load (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:918:348)
+	at Function.i._load (/usr/share/code/resources/app/out/vs/workbench/services/extensions/node/extensionHostProcess.js:887:754)
+[2020-07-31 17:04:04.263] [exthost] [info] eager extensions activated

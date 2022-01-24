@@ -1,0 +1,25 @@
+---
+- hosts: nomachine
+  become: True
+  gather_facts: false
+  name: Priority Systems
+  tasks:
+
+    - name: Disable file sharing
+      lineinfile: dest=/usr/NX/etc/node.cfg regexp='^EnableFileTransfer none'
+                  line="EnableFileTransfer both"
+      notify: start nx
+
+    - name: File check
+      shell: cat /usr/NX/etc/node.cfg | grep 'EnableFileTransfer'
+      register: check_script
+    - debug:
+        var: check_script
+
+  handlers: 
+    - name: start nx
+      shell: /etc/NX/nxserver --restart  
+  
+      
+
+  

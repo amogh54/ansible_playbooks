@@ -1,0 +1,4 @@
+[2021-05-12 09:55:53.108] [main] [info] update#setState idle
+[2021-05-12 09:56:23.118] [main] [info] update#setState checking for updates
+[2021-05-12 09:56:23.192] [main] [info] update#setState available for download
+[2021-05-12 15:32:29.807] [main] [error] [VS Code]: renderer process crashed (detail: killed)

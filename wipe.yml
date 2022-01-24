@@ -1,0 +1,11 @@
+---
+- hosts: wipe1
+  become: True
+  gather_facts: false
+  tasks:
+    - name: Copy Wipe
+      copy: src=/srv/local/wipe-2.2.0-1.2.el7.rf.x86_64.rpm dest=/srv/local mode=777
+
+    - name: Install Wipe
+      shell: rpm -ivh /srv/local/wipe-2.2.0-1.2.el7.rf.x86_64.rpm
+

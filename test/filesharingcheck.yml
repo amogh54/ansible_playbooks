@@ -1,0 +1,8 @@
+---
+- hosts: nomachine
+  become: True
+  gather_facts: false
+  name: checking FileSharingCheck
+  tasks:
+    - name: File check
+      shell: cat /usr/NX/etc/node.cfg | grep 'EnableFileTransfer none'

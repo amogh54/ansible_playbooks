@@ -1,0 +1,14 @@
+---
+- name: Installing Maria DB Server
+  hosts:  gui
+  become: True
+  tasks:
+    - name: Checking Package available or not
+      shell: rpm -qa | grep maradb-server
+      register: result
+      ignore_errors: True
+      always_run: yes
+      changed_when: no
+
+    - name: Installing MariaDB server
+      yum:  name=mariadb-server state=present 

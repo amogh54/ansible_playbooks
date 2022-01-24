@@ -1,0 +1,53 @@
+--- 
+- hosts: elk-server
+  become: True
+  gather_facts: True
+  name: CONFIGURE ELASTICSEARCH
+  vars_prompt:
+    - name: "cluser_name"
+      prompt: "assign cluster name"
+      private: no
+
+    - name: "node_name"
+      prompt: "assign node name"
+      private: no
+
+    - name: "network_host"
+      prompt: "change network binding"
+      private: no
+
+    - name: "http_port"
+      prompt: "change http port"
+      private: no
+
+  tasks:
+    - name: assign cluster name 
+      lineinfile: dest=/etc/elasticsearch/elasticsearch.yml regexp='^#cluster.name:'
+                  line="cluster.name:'\s' {{ cluser_name }}"
+      
+    - name: assign cluster a descriptive name
+      lineinfile: dest=/etc/elasticsearch/elasticsearch.yml regexp='^#node.name:'
+                  line="node.name: {{ node_name }}"
+
+    - name: change network binding
+      lineinfile: dest=/etc/elasticsearch/elasticsearch.yml regexp='^#network.host'
+                  line="network.host: {{ network_host }}"
+    
+    - name: change http port
+      lineinfile: dest=/etc/elasticsearch/elasticsearch.yml regexp='^#http.port'
+                  line="http.port: {{ http_port }}"
+      
+    - name: setup discovery.type as single node
+      shell: echo "discovery.type: single-node" >> /etc/elasticsearch/elasticsearch.yml
+
+    - name: start elasticsearch service
+      service:
+        name: elasticsearch
+        state: started
+        enabled: yes
+    
+    - name: check elasticsearch is working
+      shell: curl -XGET http://{{network_host}}:9200/_cluster/health?pretty
+      register: check_out
+    - debug:
+        var: check_out

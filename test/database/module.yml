@@ -1,0 +1,35 @@
+--- 
+- hosts: gui
+  become: True
+  gather_facts: False
+  vars:
+    mysql_root_password:  "root"
+  tasks:
+    - name: Install Mariadb
+      yum: 
+        name:
+          - mariadb-server 
+          - MySQL-python
+        state: latest 
+
+    - name: Start service 
+      service: name=mariadb state=started enabled=yes
+
+    - name: my_sql password root
+      mysql_user:
+        login_user: root
+        login_password: "{{mysql_root_password}}"
+        user: root
+        check_implicit_admin: yes
+        password: "{{mysql_root_password}}"
+        host: localhost
+
+    - name: Ensuring mariadb available on all ports
+      lineinfile: dest=/etc/my.cnf regexp=^Bind-Address
+                  line="Bind-Address=0.0.0.0:3306"
+      notify: start mariadb
+
+
+  handlers:
+    - name: start mariadb
+      service: name=mariadb state=restarted

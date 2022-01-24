@@ -1,0 +1,15 @@
+---
+- hosts: centos7
+  gather_facts: true
+  become: True
+  become_user: amogh.pawaskar
+  name: Update VLC
+  tasks:
+    - name: CHECK VLC VERSION
+      shell: vlc --version | head -n 1  | tail -n 1 | tr -s " " | cut -d  " " -f 1,3
+      register: vlc_status
+      
+
+    - debug:
+        var: vlc_status
+    

@@ -1,0 +1,30 @@
+---
+  - hosts: vlan4
+    gather_facts: true
+    tasks:
+      - block:
+          - name: Installing HTTPD for REDHAT
+            yum:
+              name: httpd
+              state: present
+          - name: Starting HTTPD service
+            service:
+              name: httpd 
+              state: started
+        when: ansible_os_family=="Redhat"
+        became: yes
+      
+      - block:
+          - name: Installing apache2 for REDHAT
+            yum:
+              name: apache2
+              state: present
+          - name: Starting HTTPD service
+            service:
+              name: apache2
+              state: started
+        when: ansible_os_family=="Redhat"
+        became: yes
+      
+      - debug: 
+          msg: "Successfully completed all tasks"

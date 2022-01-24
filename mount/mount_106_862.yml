@@ -1,0 +1,24 @@
+---
+- hosts: asep
+  become: True
+  gather_facts: false
+  name: Priority Systems
+  tasks:
+      - name: Add mount /ASEP
+        shell: mkdir /ASEP
+        ignore_errors: True
+
+      - name: Change ASEX  IP
+        shell: sed -i "s*192.168.1.48:/ifs/ASE 	/ASEP 	nfs 	defaults  	0 0* *g" /etc/fstab
+      
+      - name: Change ASEX  IP
+        shell: sed -i "s*10.11.9.62:/ifs/ASE 	/ASEP 	nfs 	defaults  	0 0* *g" /etc/fstab
+
+      - name: Add mount point 8.62
+        shell: echo "10.11.8.62:/ifs/ASE 	/ASEP 	nfs 	defaults  	0 0" >> /etc/fstab
+      
+      - name: umount /ASEP
+        shell: umount -l /ASEP
+      
+      - name: Mount partation
+        shell: mount -a

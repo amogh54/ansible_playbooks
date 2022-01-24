@@ -1,0 +1,17 @@
+---
+- hosts: wipe1
+  become: True
+  gather_facts: false
+  tasks:
+    - name: Wipe Substance
+      shell: wipe -rf /.appl/apps/substance
+      async: 6000
+      poll: 0
+      register: check_wip
+
+    - name: Check status
+      async_status:
+        jid: "{{ check_wip.ansible_job_id }}"
+      register: check_wip_job_result
+      until: check_wip_job_result.finished
+      retries: 3000
