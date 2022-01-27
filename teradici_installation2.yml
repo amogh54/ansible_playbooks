@@ -17,21 +17,20 @@
 
       - name: Copy LeostreamAgent.jar
         copy: 
-          src: /ASE/08_rnd/teradici/'{{ item }}'
+          src: /ASE/08_rnd/teradici/{{ item }}
           dest: /var/tmp
-          mode: 777
+          mode: 2777
         with_items:
           - LeostreamAgent.jar
           - leostreamagent.conf
-          - LeostreamAgentJava-6.0.11.0.jar
-          - auto-install.xml
+          - LeostreamAgentJava-5.0.11.0.jar
+          - auto-install.xml 
 
       - name: Check files are copied or not
-        shell: ls -l /var/tmp | grep *.jar
+        shell: find /var/tmp/ -name "*.jar" -o -name "*.conf" -o -name "*.xml"
         register: check_package
-
       - debug:
-          var: check_package
+          var: check_package.stdout_lines 
 
       - name: Install Package through JAVA 
         command: java -jar /var/tmp/LeostreamAgentJava-5.0.11.0.jar auto-install-xml-path /var/tmp/./auto-install.xml
