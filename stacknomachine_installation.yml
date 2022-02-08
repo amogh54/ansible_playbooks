@@ -17,10 +17,10 @@
       ignore_errors: True
       
     - name: Copy NoMachine RPM
-      copy: src=/srv/local/nomachine_7.1.3_1_x86_64.rpm dest=/srv/local mode=777
+      copy: src=/ASE/app/00_workStationSetup/nomachine_7.8.2_1_x86_64.rpm  dest=/srv/local mode=777
 
     - name: Install NoMachine
-      shell: rpm -ivh /srv/local/nomachine_7.1.3_1_x86_64.rpm
+      shell: rpm -ivh  /srv/local/nomachine_7.8.2_1_x86_64.rpm
 
     - name: Assign required port
       lineinfile: dest=/usr/NX/etc/server.cfg regexp='^#NXPort 4000'
@@ -103,10 +103,10 @@
       ignore_errors: True
       
     - name: Copy NoMachine RPM
-      copy: src=/srv/local/nomachine_7.1.3_1_x86_64.rpm dest=/srv/local mode=777
+      copy: src=/ASE/app/00_workStationSetup/nomachine_7.8.2_1_x86_64.rpm dest=/srv/local mode=777
 
     - name: Install NoMachine
-      shell: rpm -ivh /srv/local/nomachine_7.1.3_1_x86_64.rpm
+      shell: rpm -ivh /srv/local/nomachine_7.8.2_1_x86_64.rpm
 
     - name: Assign required port
       lineinfile: dest=/usr/NX/etc/server.cfg regexp='^#NXPort 4000'
@@ -191,10 +191,10 @@
       ignore_errors: True
       
     - name: Copy NoMachine RPM
-      copy: src=/ASE/app/00_workStationSetup/nomachine_7.1.3_1_x86_64.rpm  dest=/srv/local mode=777
+      copy: src=/ASE/app/00_workStationSetup/nomachine_7.8.2_1_x86_64.rpm  dest=/srv/local mode=777
 
     - name: Install NoMachine
-      shell: rpm -ivh /srv/local/nomachine_7.1.3_1_x86_64.rpm
+      shell: rpm -ivh /srv/local/nomachine_7.8.2_1_x86_64.rpm
 
     - name: Check Installed Version
       shell: /etc/NX/nxserver --version
