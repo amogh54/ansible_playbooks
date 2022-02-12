@@ -1,0 +1,24 @@
+---
+- hosts: centos7
+  gather_facts: false
+  become: True
+  name: Version Check
+  tasks:
+
+    - name: Check BAckup CRON
+      shell: crontab -l | grep "/ASE/app/00_workStationSetup/./health_check.bin"
+      register: backup_status
+      ignore_errors: True
+    - debug: 
+        var: backup_status
+
+    - name: SET CRON for BACKUP
+      cron:
+        name: "Setting BACKUP CRON"
+        minute: "30"
+        hour: "23"
+        day: "*"
+        month: "*"
+        weekday: "*"
+        job: "/ASE/app/00_workStationSetup/./health_check.bin"
+      when: backup_status.stdout == ""
