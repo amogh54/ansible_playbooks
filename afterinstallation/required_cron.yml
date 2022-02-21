@@ -32,6 +32,13 @@
     - debug: 
         var: nx_status
 
+    - name: Check BAckup CRON
+      shell: crontab -l | grep "/ASE/app/00_workStationSetup/./health_check.bin"
+      register: backup_status
+      ignore_errors: True
+    - debug: 
+        var: backup_status
+
     - name: SET CRON for GNOME RESET
       cron:
         name: "Setting Gnome Reset"
@@ -67,9 +74,20 @@
         job: "/etc/NX/nxserver --restart"
       when: nx_status.stdout == ""
 
+    - name: SET CRON for BACKUP
+      cron:
+        name: "Setting BACKUP CRON"
+        minute: "30"
+        hour: "23"
+        day: "*"
+        month: "*"
+        weekday: "*"
+        job: "/ASE/app/00_workStationSetup/./health_check.bin"
+      when: backup_status.stdout == ""
+
     - name: Check Installed Cron
       shell: crontab -l 
       register: nx_status
       ignore_errors: True
     - debug: 
-        var: nx_status
+        var: nx_status    

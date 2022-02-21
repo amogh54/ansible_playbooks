@@ -12,4 +12,4 @@
         day: "*"
         month: "*"
         weekday: "*"
-        job: "/ASE/app/00_workStationSetup/vaccine.sh"   
+        job: "./scripts/vaccine.sh"   

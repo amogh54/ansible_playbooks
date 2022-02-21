@@ -11,11 +11,11 @@
      shell: rm -rf /usr/local/share/applications/pulse.desktop
 
    - name: Install PULSE AUDIO script
-     script: /ASE/app/00_workStationSetup/getaudio.sh
+     script: ./scripts/getaudio.sh
 
 
    - name: Install PULSE AUDIO script
-     script: /ASE/app/00_workStationSetup/getlagging.sh
+     script: ./scripts/getlagging.sh
 
 ##   - name: Confirm path of script
 ##     shell: ls /usr/local/share/applications/

@@ -18,7 +18,7 @@
       ignore_errors: True
       
     - name: Copy NoMachine RPM
-      copy: src=/ASE/app/00_workStationSetup/nomachine_7.8.2_1_x86_64.rpm  dest=/srv/local mode=2777
+      copy: src= ./local_rpm/nomachine_7.8.2_1_x86_64.rpm  dest=/srv/local mode=2777
 
     - name: Install NoMachine
       shell: rpm -ivh /srv/local/nomachine_7.8.2_1_x86_64.rpm
@@ -61,7 +61,7 @@
       when: lagresult.stat.exists == true
 
     - name: Install lagging script
-      script: /srv/local/getlagging.sh
+      script: ./scripts/getlagging.sh
       when: lagresult.stat.exists == false
 
     - name: Verify Lagging Script is installed?
@@ -80,7 +80,7 @@
       when: audioresult.stat.exists == true
 
     - name: Install audio script
-      script: /srv/local/getaudio.sh
+      script: ./scripts/getaudio.sh
       when: audioresult.stat.exists == false
 
     - name: Verify Audio script installed?

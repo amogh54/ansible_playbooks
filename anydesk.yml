@@ -5,7 +5,7 @@
   name: Priority Systems
   tasks:
     - name: Copy anydesk on prio
-      copy: src=/share/aquib.sayyed/anydesk-4.0.1-1.el6.x86_64.rpm dest=/srv/local mode=777
+      copy: src= ./local_rpm/anydesk/anydesk-6.1.1-1.el7.x86_64.rpm dest=/srv/local mode=777
 
     - name: Installing Anydesk
-      shell: rpm -ivh /srv/local/anydesk-4.0.1-1.el6.x86_64.rpm
+      shell: rpm -ivh /srv/local/anydesk-6.1.1-1.el7.x86_64.rpm

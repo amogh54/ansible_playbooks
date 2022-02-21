@@ -6,7 +6,7 @@
   tasks:
     - name: Copy file
       copy: 
-        src: /srv/local/00-login
+        src: ./scripts/00-login
         dest: /etc/dconf/db/local.d
         mode: 0644
 

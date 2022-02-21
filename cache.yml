@@ -13,4 +13,4 @@
         day: "*"
         month: "*"
         weekday: "*"
-        job: "/ASE/08_rnd/autodesk/resetGnome.sh"
+        job: "./scripts/resetGnome.sh"
