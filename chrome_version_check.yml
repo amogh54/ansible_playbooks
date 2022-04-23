@@ -1,0 +1,12 @@
+---
+- hosts: chrome
+  gather_facts: True
+  become: True
+  become_user: amogh.pawaskar
+  tasks:
+    - name: Check Chrome Version
+      shell: google-chrome --version
+      register: version_status
+
+    - debug: 
+        var: version_status.stdout

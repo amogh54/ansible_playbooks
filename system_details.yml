@@ -1,0 +1,12 @@
+---
+- hosts: centos7
+  become: True
+  gather_facts: false
+  tasks: 
+
+    - name: exec mate
+      shell: /ASE/app/00_workStationSetup/./systeminfo.sh
+      register: check_out
+
+    - debug:
+        var: check_out.stdout_lines

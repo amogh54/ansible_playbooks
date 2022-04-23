@@ -1,0 +1,20 @@
+---
+- hosts: brb
+  become: True
+  gather_facts: True
+  name: Create mount point and mount /work for BRB
+  tasks:
+   - name: Create mount-point
+     shell: mkdir -p /work/22339_BRO
+   - name: Give permission
+     shell: chown -R pip:brb /work
+   - name: Register ASE value
+     shell: cat /etc/fstab | grep ASE | head -n 1 | awk '{print $1;}'
+     register: ASE
+   - debug:
+       var: ASE
+   - name: Echo new mount point
+     shell: echo -e {{ASE.stdout}}/01prj/BRB/22339_BRO  /work/22339_BRO   nfs  defaults   0 0 >> /etc/fstab
+   - name: Mount new mountpoint
+     shell: mount -a
+       

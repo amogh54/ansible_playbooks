@@ -1,0 +1,21 @@
+---
+  - name: DJV playbook
+    import_playbook: djv.yml
+  
+  - name: PRJ2 playbook
+    import_playbook: prj2.yml
+
+  - name: SSH playbook
+    import_playbook: sshpass.yml
+  
+  - name: CRON playbook
+    import_playbook: required_cron.yml
+  
+  - name: Audio playbook
+    import_playbook: audiorpm.yml
+
+  - name: Vlc playbook
+    import_playbook: vars.yml 
+
+  - name: Wazuh Client Installation
+    import_playbook: wazuh.yml 

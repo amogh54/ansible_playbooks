@@ -1,0 +1,24 @@
+---
+- hosts: chrome
+  gather_facts: True
+  become: True
+  tasks:
+    - name: Copy latest chrome rpm
+      copy:
+        src: /srv/local/google-chrome-stable_current_x86_64.rpm
+        dest: /srv/local
+        owner: root
+        group: root
+      when: version_status.stdout != "Google Chrome 99.0.4844.51 "
+
+    - name: Install Updated Chrome
+      shell: rpm -Uv /srv/local/google-chrome-stable_current_x86_64.rpm
+      when: version_status.stdout != "Google Chrome 99.0.4844.51 "
+
+    - name: Verify version
+      shell: google-chrome --version
+      become_user: amogh.pawaskar
+      register: latest_version
+
+    - debug: 
+        var: latest_version
