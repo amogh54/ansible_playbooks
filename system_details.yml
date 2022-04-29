@@ -1,5 +1,5 @@
 ---
-- hosts: centos7
+- hosts: system
   become: True
   gather_facts: false
   tasks: 
