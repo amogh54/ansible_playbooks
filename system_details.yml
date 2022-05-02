@@ -7,7 +7,7 @@
   tasks: 
 
     - name: exec mate
-      shell: sudo /ASE/app/00_workStationSetup/./systeminfo.sh
+      shell: /ASE/app/00_workStationSetup/./systeminfo.sh
       register: check_out
 
     - debug:
