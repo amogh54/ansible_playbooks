@@ -1,6 +1,7 @@
 ---
 - hosts: system
   become: True
+  become_user: jenkins
   gather_facts: true
   tasks: 
 
