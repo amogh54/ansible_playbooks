@@ -1,0 +1,12 @@
+---
+- hosts: system
+  gather_facts: true
+  become: true
+  name: check screen recording cron
+  tasks:
+    - name: Run Screen recording script
+      shell: /ASE/app/00_workStationSetup/./screenshot_check.sh 
+      register: test_script
+
+    - debug:
+        var: test_script.stdout_lines

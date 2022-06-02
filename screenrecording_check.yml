@@ -1,0 +1,17 @@
+---
+- hosts: screencheck
+  gather_facts: true
+  become: true
+  name: check screen recording cron
+  tasks:
+    - name: Check who is logged into system
+      shell: who | cut -d' ' -f1 | sort | uniq | grep -v -e root
+      register: login_status
+    - debug:
+        var: login_status.stdout_lines
+
+    - name: Check cron installed or not
+      shell: ls -l /var/spool/cron | grep "{{ login_status.stdout_lines }}"
+      register: cron_status
+    - debug:
+        var: cron_status.stdout_lines
