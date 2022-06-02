@@ -1,7 +1,9 @@
 ---
-- hosts: centos7
+- hosts: system
   become: True
-  gather_facts: false
+#  become_method: sudo
+#  become_user: jenkins
+  gather_facts: true
   tasks: 
 
     - name: exec mate
